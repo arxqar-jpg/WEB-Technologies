@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page created by Kassymkhan and Darkhan -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacts - CodeQuiz</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+
+        <h1>CodeQuiz</h1>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="contact-section">
+
+            <h1>Contact Us</h1>
+
+            <p>
+                Fill out the form below to send us a message.
+            </p>
+
+            <img
+                src="https://images.unsplash.com/photo-1563762270340-3f5fde3243cd?auto=format&fit=crop&w=800&q=80"
+                alt="Email and contact illustration"
+                class="contact-img"
+            >
+
+            <form id="contact-form" action="#" method="get">
+
+                <div class="form-group">
+
+                    <label for="user-name">
+                        Your Name:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="user-name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="user-email">
+                        Email:
+                    </label>
+
+                    <input
+                        type="email"
+                        id="user-email"
+                        name="email"
+                        placeholder="name@example.com"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="topic-select">
+                        Topic:
+                    </label>
+
+                    <select id="topic-select" name="topic">
+
+                        <option value="general">
+                            General Question
+                        </option>
+
+                        <option value="collaboration">
+                            Collaboration
+                        </option>
+
+                        <option value="feedback">
+                            Feedback
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="user-message">
+                        Message:
+                    </label>
+
+                    <textarea
+                        id="user-message"
+                        name="message"
+                        rows="5"
+                        placeholder="Enter your message..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Developers: Kassymkhan, Darkhan</p>
+    </footer>
+
+</body>
+
+</html>
