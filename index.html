@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Page created by Saduakasov Darkhan -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CodeQuiz - Home</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -14,182 +10,376 @@
 
 <body>
 
-    <header id="main-header">
+    <div class="page-layout">
 
-        <h1>CodeQuiz</h1>
-
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contacts</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <section class="welcome">
-
-            <h2>Test Your Programming Knowledge</h2>
-
-            <p>
-                CodeQuiz is a simple website where students can test
-                their knowledge of programming languages.
-            </p>
-
-            <img
-                class="round-image"
-                src="https://imgfy.ru/ib/2Ky3aG6DmeVzh49_1789524882.webp"
-                alt="Programming image"
-            >
-
-        </section>
-
-
-        <section>
-
-            <h2>Choose a Quiz</h2>
-
-            <div class="quiz-container">
-
-                <div class="quiz-card">
-
-                    <h3>Java Quiz</h3>
-
-                    <p>
-                        Test your basic Java knowledge.
-                    </p>
-
-                    <a class="button" href="quiz.html#java">
-                        Start Quiz
-                    </a>
-
-                </div>
-
-
-                <div class="quiz-card">
-
-                    <h3>Python Quiz</h3>
-
-                    <p>
-                        Test your basic Python knowledge.
-                    </p>
-
-                    <a class="button" href="quiz.html#python">
-                        Start Quiz
-                    </a>
-
-                </div>
-
-
-                <div class="quiz-card">
-
-                    <h3>HTML & CSS Quiz</h3>
-
-                    <p>
-                        Test your basic web development knowledge.
-                    </p>
-
-                    <a class="button" href="quiz.html#htmlcss">
-                        Start Quiz
-                    </a>
-
-                </div>
-
+        <header id="main-header">
+            <div class="logo">
+                <h1>CodeQuiz</h1>
             </div>
 
-        </section>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
 
 
-        <section>
-
-            <h2>How It Works</h2>
-
-            <ol>
-                <li>Choose a programming language.</li>
-                <li>Open the quiz.</li>
-                <li>Answer the questions.</li>
-            </ol>
-
-
-            <h3>Available Topics</h3>
+        <aside class="sidebar">
+            <h2>Quiz Topics</h2>
 
             <ul>
                 <li>Java</li>
                 <li>Python</li>
-                <li>HTML and CSS</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
             </ul>
 
-        </section>
+            <h3>Difficulty</h3>
+
+            <ul>
+                <li>Easy</li>
+                <li>Medium</li>
+                <li>Hard</li>
+            </ul>
+        </aside>
 
 
-        <section>
+        <main class="main-content">
 
-            <h2>Quiz Information</h2>
+            <section class="welcome">
 
-            <table>
+                <div class="welcome-text">
+                    <h2>Test Your Programming Knowledge</h2>
 
-                <thead>
-                    <tr>
-                        <th>Language</th>
-                        <th>Questions</th>
-                        <th>Difficulty</th>
-                    </tr>
-                </thead>
+                    <p>
+                        CodeQuiz is a simple website where students can test
+                        their knowledge of programming languages and web development.
+                    </p>
 
-                <tbody>
+                    <a href="quiz.html" class="button">
+                        Start Learning
+                    </a>
+                </div>
 
-                    <tr>
-                        <td>Java</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
+                <img
+                    class="round-image"
+                    src="https://imgfy.ru/ib/2Ky3aG6DmeVzh49_1789524882.webp"
+                    alt="Programming image"
+                >
 
-                    <tr>
-                        <td>Python</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
-
-                    <tr>
-                        <td>HTML & CSS</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </section>
+            </section>
 
 
-        <section class="profile">
+            <section class="quiz-section">
 
-            <h2>About the Team Member</h2>
+                <h2>Choose a Quiz</h2>
+
+                <div class="quiz-container">
+
+                    <div class="quiz-card">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                            alt="Java"
+                        >
+
+                        <h3>Java Quiz</h3>
+
+                        <p>
+                            Test your basic Java programming knowledge.
+                        </p>
+
+                        <a class="button" href="quiz.html#java">
+                            Start Quiz
+                        </a>
+
+                    </div>
+
+
+                    <div class="quiz-card">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python"
+                        >
+
+                        <h3>Python Quiz</h3>
+
+                        <p>
+                            Test your basic Python programming knowledge.
+                        </p>
+
+                        <a class="button" href="quiz.html#python">
+                            Start Quiz
+                        </a>
+
+                    </div>
+
+
+                    <div class="quiz-card">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML"
+                        >
+
+                        <h3>HTML & CSS Quiz</h3>
+
+                        <p>
+                            Test your basic web development knowledge.
+                        </p>
+
+                        <a class="button" href="quiz.html#htmlcss">
+                            Start Quiz
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="how-it-works">
+
+                <h2>How It Works</h2>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <h3>1</h3>
+                        <p>Choose a programming topic.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>2</h3>
+                        <p>Open the selected quiz.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>3</h3>
+                        <p>Answer the questions.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="gallery-section">
+
+                <h2>Programming Gallery</h2>
+
+                <p>
+                    Explore technologies that you can learn and practice.
+                </p>
+
+                <div class="gallery">
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                            alt="Java"
+                        >
+
+                        <div class="caption">
+                            Java
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python"
+                        >
+
+                        <div class="caption">
+                            Python
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML"
+                        >
+
+                        <div class="caption">
+                            HTML
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                            alt="CSS"
+                        >
+
+                        <div class="caption">
+                            CSS
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript"
+                        >
+
+                        <div class="caption">
+                            JavaScript
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                            alt="GitHub"
+                        >
+
+                        <div class="caption">
+                            GitHub
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                            alt="Git"
+                        >
+
+                        <div class="caption">
+                            Git
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                            alt="Linux"
+                        >
+
+                        <div class="caption">
+                            Linux
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                            alt="MySQL"
+                        >
+
+                        <div class="caption">
+                            MySQL
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="quiz-info">
+
+                <h2>Quiz Information</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Language</th>
+                            <th>Questions</th>
+                            <th>Difficulty</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Java</td>
+                            <td>3</td>
+                            <td>Easy</td>
+                        </tr>
+
+                        <tr>
+                            <td>Python</td>
+                            <td>3</td>
+                            <td>Easy</td>
+                        </tr>
+
+                        <tr>
+                            <td>HTML & CSS</td>
+                            <td>3</td>
+                            <td>Easy</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <section class="profile">
+
+                <h2>About the Team</h2>
+
+                <p>
+                    CodeQuiz was created by students of Astana IT University.
+                    The goal of the project is to help students practice
+                    programming knowledge using simple quizzes.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <footer>
 
             <p>
-                My name is Saduakasov Darkhan. I am a student of Astana IT University
-                interested in programming and web development.
+                Developers: Kassymkhan, Darkhan
             </p>
 
-        </section>
+            <p>
+                CodeQuiz © 2026
+            </p>
 
-    </main>
+        </footer>
 
-
-    <footer>
-
-        <p>
-            Developers: Kassymkhan, Darkhan
-        </p>
-
-    </footer>
+    </div>
 
 </body>
-
 </html>

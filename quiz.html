@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Created by: Darkhan and Kassymkhan -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,212 +10,445 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="quiz-page">
 
-    <header id="main-header">
+    <div class="page-layout">
 
-        <h1>CodeQuiz</h1>
+        <header id="main-header">
 
-        <nav class="nav-menu">
+            <div class="logo">
+                <h1>CodeQuiz</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <aside class="sidebar">
+
+            <h2>Quiz Menu</h2>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="#java">Java Quiz</a></li>
+                <li><a href="#python">Python Quiz</a></li>
+                <li><a href="#htmlcss">HTML & CSS Quiz</a></li>
             </ul>
-        </nav>
 
-    </header>
+            <div class="sidebar-info">
 
-    <main>
+                <h3>Topics</h3>
+                <p>3 quizzes</p>
 
-        <section class="welcome">
+                <h3>Questions</h3>
+                <p>9 questions</p>
 
-            <h2>Programming Quizzes</h2>
+                <h3>Difficulty</h3>
+                <p>Beginner</p>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+            <section class="welcome quiz-hero">
+
+                <div class="welcome-text">
+
+                    <span class="section-label">
+                        CODEQUIZ CHALLENGE
+                    </span>
+
+                    <h2>
+                        Test Your Coding Skills
+                    </h2>
+
+                    <p>
+                        Choose a programming topic, answer the questions
+                        and check how well you know the basics.
+                    </p>
+
+                    <a href="#java" class="button">
+                        Start Quiz
+                    </a>
+
+                </div>
+
+                <img
+                    class="quiz-image"
+                    src="https://imgfy.ru/ib/yOnUN8Wx6OG0F5i_1789525091.webp"
+                    alt="Programming quiz"
+                >
+
+            </section>
+
+
+            <section class="quiz-section" id="java">
+
+                <div class="quiz-title">
+
+                    <div>
+                        <span class="section-label">
+                            QUIZ 01
+                        </span>
+
+                        <h2>Java Quiz</h2>
+                    </div>
+
+                    <span class="quiz-badge">
+                        3 Questions
+                    </span>
+
+                </div>
+
+
+                <form>
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 01
+                        </span>
+
+                        <h3>
+                            Which keyword is used to create a class?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="java1">
+                            class
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java1">
+                            def
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java1">
+                            function
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 02
+                        </span>
+
+                        <h3>
+                            Which method starts a Java program?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="java2">
+                            main()
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java2">
+                            start()
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java2">
+                            run()
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 03
+                        </span>
+
+                        <h3>
+                            Which symbol ends a Java statement?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="java3">
+                            ;
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java3">
+                            :
+                        </label>
+
+                        <label>
+                            <input type="radio" name="java3">
+                            #
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="quiz-submit">
+                        Submit Java Answers
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <section class="quiz-section" id="python">
+
+                <div class="quiz-title">
+
+                    <div>
+                        <span class="section-label">
+                            QUIZ 02
+                        </span>
+
+                        <h2>Python Quiz</h2>
+                    </div>
+
+                    <span class="quiz-badge">
+                        3 Questions
+                    </span>
+
+                </div>
+
+
+                <form>
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 01
+                        </span>
+
+                        <h3>
+                            Which keyword creates a function in Python?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="python1">
+                            def
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python1">
+                            function
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python1">
+                            class
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 02
+                        </span>
+
+                        <h3>
+                            Which function prints text?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="python2">
+                            print()
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python2">
+                            show()
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python2">
+                            write()
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 03
+                        </span>
+
+                        <h3>
+                            Python files usually use which extension?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="python3">
+                            .py
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python3">
+                            .java
+                        </label>
+
+                        <label>
+                            <input type="radio" name="python3">
+                            .html
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="quiz-submit">
+                        Submit Python Answers
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <section class="quiz-section" id="htmlcss">
+
+                <div class="quiz-title">
+
+                    <div>
+                        <span class="section-label">
+                            QUIZ 03
+                        </span>
+
+                        <h2>HTML & CSS Quiz</h2>
+                    </div>
+
+                    <span class="quiz-badge">
+                        3 Questions
+                    </span>
+
+                </div>
+
+
+                <form>
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 01
+                        </span>
+
+                        <h3>
+                            What does HTML stand for?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="html1">
+                            HyperText Markup Language
+                        </label>
+
+                        <label>
+                            <input type="radio" name="html1">
+                            HighText Machine Language
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 02
+                        </span>
+
+                        <h3>
+                            Which tag is used for a paragraph?
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="html2">
+                            &lt;p&gt;
+                        </label>
+
+                        <label>
+                            <input type="radio" name="html2">
+                            &lt;h1&gt;
+                        </label>
+
+                        <label>
+                            <input type="radio" name="html2">
+                            &lt;img&gt;
+                        </label>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <span class="question-number">
+                            Question 03
+                        </span>
+
+                        <h3>
+                            CSS is mainly used for:
+                        </h3>
+
+                        <label>
+                            <input type="radio" name="html3">
+                            Styling
+                        </label>
+
+                        <label>
+                            <input type="radio" name="html3">
+                            Database
+                        </label>
+
+                        <label>
+                            <input type="radio" name="html3">
+                            Server
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="quiz-submit">
+                        Submit HTML & CSS Answers
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+
+            <div class="footer-logo">
+                <h3>CodeQuiz</h3>
+                <p>Learn. Practice. Improve.</p>
+            </div>
 
             <p>
-                Choose your answers and test your knowledge.
+                Developers: Kassymkhan & Darkhan
             </p>
 
-            <img
-                class="quiz-image"
-                src="https://imgfy.ru/ib/yOnUN8Wx6OG0F5i_1789525091.webp"
-                alt="Programming quiz image"
-            >
+            <p>
+                © 2026 CodeQuiz
+            </p>
 
-        </section>
+        </footer>
 
-        <section class="quiz-section" id="java">
-
-            <h2>Java Quiz</h2>
-
-            <form>
-
-                <h3>1. Which keyword is used to create a class?</h3>
-
-                <label>
-                    <input type="radio" name="java1"> class
-                </label>
-
-                <label>
-                    <input type="radio" name="java1"> def
-                </label>
-
-                <label>
-                    <input type="radio" name="java1"> function
-                </label>
-
-                <h3>2. Which method starts a Java program?</h3>
-
-                <label>
-                    <input type="radio" name="java2"> main()
-                </label>
-
-                <label>
-                    <input type="radio" name="java2"> start()
-                </label>
-
-                <label>
-                    <input type="radio" name="java2"> run()
-                </label>
-
-                <h3>3. Which symbol ends a Java statement?</h3>
-
-                <label>
-                    <input type="radio" name="java3"> ;
-                </label>
-
-                <label>
-                    <input type="radio" name="java3"> :
-                </label>
-
-                <label>
-                    <input type="radio" name="java3"> #
-                </label>
-
-                <button type="submit">
-                    Submit Answers
-                </button>
-
-            </form>
-
-        </section>
-
-        <section class="quiz-section" id="python">
-
-            <h2>Python Quiz</h2>
-
-            <form>
-
-                <h3>1. Which keyword creates a function in Python?</h3>
-
-                <label>
-                    <input type="radio" name="python1"> def
-                </label>
-
-                <label>
-                    <input type="radio" name="python1"> function
-                </label>
-
-                <label>
-                    <input type="radio" name="python1"> class
-                </label>
-
-                <h3>2. Which function prints text?</h3>
-
-                <label>
-                    <input type="radio" name="python2"> print()
-                </label>
-
-                <label>
-                    <input type="radio" name="python2"> show()
-                </label>
-
-                <label>
-                    <input type="radio" name="python2"> write()
-                </label>
-
-                <h3>3. Python files usually use which extension?</h3>
-
-                <label>
-                    <input type="radio" name="python3"> .py
-                </label>
-
-                <label>
-                    <input type="radio" name="python3"> .java
-                </label>
-
-                <label>
-                    <input type="radio" name="python3"> .html
-                </label>
-
-                <button type="submit">
-                    Submit Answers
-                </button>
-
-            </form>
-
-        </section>
-
-        <section class="quiz-section" id="htmlcss">
-
-            <h2>HTML & CSS Quiz</h2>
-
-            <form>
-
-                <h3>1. What does HTML stand for?</h3>
-
-                <label>
-                    <input type="radio" name="html1">
-                    HyperText Markup Language
-                </label>
-
-                <label>
-                    <input type="radio" name="html1">
-                    HighText Machine Language
-                </label>
-
-                <h3>2. Which tag is used for a paragraph?</h3>
-
-                <label>
-                    <input type="radio" name="html2"> &lt;p&gt;
-                </label>
-
-                <label>
-                    <input type="radio" name="html2"> &lt;h1&gt;
-                </label>
-
-                <label>
-                    <input type="radio" name="html2"> &lt;img&gt;
-                </label>
-
-                <h3>3. CSS is mainly used for:</h3>
-
-                <label>
-                    <input type="radio" name="html3"> Styling
-                </label>
-
-                <label>
-                    <input type="radio" name="html3"> Database
-                </label>
-
-                <label>
-                    <input type="radio" name="html3"> Server
-                </label>
-
-                <button type="submit">
-                    Submit Answers
-                </button>
-
-            </form>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Developers: Kassymkhan, Darkhan</p>
-    </footer>
+    </div>
 
 </body>
 

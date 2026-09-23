@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Page created by Kassymkhan and Darkhan -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,124 +12,377 @@
 
 <body>
 
-    <header id="main-header">
+    <div class="page-layout">
 
-        <h1>CodeQuiz</h1>
+        <header id="main-header">
 
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contacts</a></li>
+            <div class="logo">
+                <h1>CodeQuiz</h1>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contacts</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <aside class="sidebar">
+
+            <h2>Contact</h2>
+
+            <ul class="sidebar-menu">
+                <li><a href="#contact-main">Send Message</a></li>
+                <li><a href="#contact-info">Contact Info</a></li>
+                <li><a href="#feedback">Feedback</a></li>
             </ul>
-        </nav>
 
-    </header>
+            <div class="sidebar-info">
 
-    <main>
+                <h3>Project</h3>
+                <p>CodeQuiz</p>
 
-        <section class="contact-section">
+                <h3>Course</h3>
+                <p>Front-End Development</p>
 
-            <h1>Contact Us</h1>
+                <h3>Team</h3>
+                <p>Kassymkhan & Darkhan</p>
+
+            </div>
+
+        </aside>
+
+
+        <main class="main-content">
+
+
+            <section class="contact-hero">
+
+                <div>
+
+                    <span class="section-label">
+                        CONTACT US
+                    </span>
+
+                    <h1>
+                        Have a Question?
+                        Send Us a Message.
+                    </h1>
+
+                    <p>
+                        Have feedback about CodeQuiz or questions about
+                        our project? You can contact our team using the
+                        form below.
+                    </p>
+
+                </div>
+
+                <div class="contact-hero-box">
+
+                    <div class="contact-symbol">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>CodeQuiz Team</h3>
+
+                    <p>
+                        Learn. Practice. Improve.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="contact-content" id="contact-main">
+
+
+                <div class="contact-form-container">
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            SEND A MESSAGE
+                        </span>
+
+                        <h2>Contact Form</h2>
+
+                        <p>
+                            Complete the form and send your message to our team.
+                        </p>
+
+                    </div>
+
+
+                    <form id="contact-form" action="#" method="get">
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="user-name">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="user-name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="user-email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="user-email"
+                                    name="email"
+                                    placeholder="name@example.com"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="topic-select">
+                                Select Topic
+                            </label>
+
+                            <select id="topic-select" name="topic">
+
+                                <option value="general">
+                                    General Question
+                                </option>
+
+                                <option value="quiz">
+                                    Quiz Question
+                                </option>
+
+                                <option value="feedback">
+                                    Website Feedback
+                                </option>
+
+                                <option value="collaboration">
+                                    Collaboration
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="user-message">
+                                Your Message
+                            </label>
+
+                            <textarea
+                                id="user-message"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="contact-info-container" id="contact-info">
+
+                    <span class="section-label">
+                        CONTACT INFORMATION
+                    </span>
+
+                    <h2>Get in Touch</h2>
+
+                    <p>
+                        You can contact the CodeQuiz team for questions,
+                        suggestions or feedback.
+                    </p>
+
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon">
+                            01
+                        </div>
+
+                        <div>
+                            <h3>Project</h3>
+                            <p>CodeQuiz</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon">
+                            02
+                        </div>
+
+                        <div>
+                            <h3>University</h3>
+                            <p>Astana IT University</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon">
+                            03
+                        </div>
+
+                        <div>
+                            <h3>Team</h3>
+                            <p>Kassymkhan & Darkhan</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon">
+                            04
+                        </div>
+
+                        <div>
+                            <h3>Course</h3>
+                            <p>Front-End Development</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="feedback-section" id="feedback">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        YOUR FEEDBACK
+                    </span>
+
+                    <h2>Help Us Improve CodeQuiz</h2>
+
+                    <p>
+                        Your suggestions help us make the website
+                        more useful and interesting for students.
+                    </p>
+
+                </div>
+
+
+                <div class="feedback-cards">
+
+                    <div class="feedback-card">
+
+                        <span>01</span>
+
+                        <h3>Quiz Ideas</h3>
+
+                        <p>
+                            Suggest programming languages or topics
+                            for future quizzes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feedback-card">
+
+                        <span>02</span>
+
+                        <h3>Website Design</h3>
+
+                        <p>
+                            Tell us how we can improve the website
+                            design and user experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feedback-card">
+
+                        <span>03</span>
+
+                        <h3>Report a Problem</h3>
+
+                        <p>
+                            Let us know if you find a broken link
+                            or another website problem.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <footer>
+
+            <div class="footer-logo">
+
+                <h3>CodeQuiz</h3>
+
+                <p>
+                    Learn. Practice. Improve.
+                </p>
+
+            </div>
+
 
             <p>
-                Fill out the form below to send us a message.
+                Developers: Kassymkhan & Darkhan
             </p>
 
-            <img
-                src="https://images.unsplash.com/photo-1563762270340-3f5fde3243cd?auto=format&fit=crop&w=800&q=80"
-                alt="Email and contact illustration"
-                class="contact-img"
-            >
 
-            <form id="contact-form" action="#" method="get">
+            <p>
+                © 2026 CodeQuiz
+            </p>
 
-                <div class="form-group">
+        </footer>
 
-                    <label for="user-name">
-                        Your Name:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="user-name"
-                        name="name"
-                        placeholder="Enter your name"
-                        required
-                    >
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="user-email">
-                        Email:
-                    </label>
-
-                    <input
-                        type="email"
-                        id="user-email"
-                        name="email"
-                        placeholder="name@example.com"
-                        required
-                    >
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="topic-select">
-                        Topic:
-                    </label>
-
-                    <select id="topic-select" name="topic">
-
-                        <option value="general">
-                            General Question
-                        </option>
-
-                        <option value="collaboration">
-                            Collaboration
-                        </option>
-
-                        <option value="feedback">
-                            Feedback
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label for="user-message">
-                        Message:
-                    </label>
-
-                    <textarea
-                        id="user-message"
-                        name="message"
-                        rows="5"
-                        placeholder="Enter your message..."
-                        required
-                    ></textarea>
-
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    Send Message
-                </button>
-
-            </form>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Developers: Kassymkhan, Darkhan</p>
-    </footer>
+    </div>
 
 </body>
 
