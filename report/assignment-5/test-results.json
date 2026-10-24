@@ -1,0 +1,40 @@
+{
+  "passed": [
+    "Every page initializes clock, popup and common JavaScript",
+    "Clock updates every second",
+    "Five theme colours cycle and return to original",
+    "FAQ default hidden, open, switch and close",
+    "Popup tabs, focus trap, Escape and backdrop closing",
+    "Required registration fields, Kazakh name and invalid name",
+    "Bad syntax, dummy, temporary and typo emails rejected; realistic addresses accepted",
+    "Short password, missing digits and confirmation mismatch rejected",
+    "Typing/pasting whitespace blocked and raw whitespace rejected",
+    "Successful demo registration resets passwords and fields",
+    "Newsletter shares validation and handles successful demo",
+    "Three quizzes: incomplete, 100%, 67% and score clearing",
+    "Contact form required fields, safe output and successful correction",
+    "Mobile popup tabs and submitting checkbox at 360px",
+    "Assignment 5: jQuery 3.7.1 and five-page arrow-key navigation",
+    "Assignment 5: array, filter callback, switch labels and generated quiz links",
+    "Assignment 5: multi-step validation and state across Next and Back callbacks",
+    "Assignment 5: object method summary, correct linked quiz and animation",
+    "Assignment 5: native addEventListener resets the full plan and its feedback",
+    "Assignment 5: all planner topics link to the existing corresponding quiz",
+    "Assignment 5: thumbnail src, alt, caption, ARIA and rapid-click animation queues",
+    "Assignment 5: bundled audio really advances, retriggers without overlap, mutes and ends",
+    "Assignment 5: Enter in the multi-step form advances without reload",
+    "Assignment 5: all assets and all five pages fit phone, tablet and desktop widths",
+    "Assignment 5: mobile planner, filtering, gallery and existing popup remain usable"
+  ],
+  "errors": [],
+  "browser": "Google Chrome 155.0.8059.85",
+  "transport": "offline file URLs",
+  "widths": [
+    360,
+    390,
+    768,
+    1440
+  ],
+  "team": "Team Spirit",
+  "group": "SE 2508"
+}

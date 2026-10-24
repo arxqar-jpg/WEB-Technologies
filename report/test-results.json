@@ -1,0 +1,76 @@
+{
+  "transport": "offline file URLs",
+  "configuredBrowsers": "chromium",
+  "results": [
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "All four pages, local assets, footers and initial modal state",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Live clock ticks using a machine-readable time element",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Background changes, cycles and persists across pages",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "FAQ starts closed, opens smoothly, switches and closes by keyboard",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Popup close button, backdrop, Escape, focus trap and tab keyboard controls",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Empty registration, name rules, short passwords and confirmation mismatch",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Passwords block typed spaces, pasted whitespace and invisible characters",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Malformed, dummy, disposable and typo emails are rejected consistently",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Valid registration completes locally and never stores password data",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Newsletter rejects fake email and accepts realistic syntax",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "All three quizzes: incomplete, perfect, incorrect and resubmission scores",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Contact validation rejects injected name/fake email and handles corrections",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Responsive pages at 360px, 390px and 768px, mobile navbar and modal",
+      "status": "PASS"
+    },
+    {
+      "browser": "Chrome 155.0.8059.85",
+      "label": "Works with localStorage disabled and by opening index.html directly",
+      "status": "PASS"
+    }
+  ]
+}

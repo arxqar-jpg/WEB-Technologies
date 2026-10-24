@@ -2,389 +2,217 @@
 <html lang="en">
 
 <head>
+    <!-- Assignment #4: Introduction to JavaScript - Darkhan & Kassymkhan -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contacts - CodeQuiz</title>
 
+    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
 <body>
 
-    <div class="page-layout">
-
-        <header id="main-header">
-
-            <div class="logo">
-                <h1>CodeQuiz</h1>
+    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
+    <div class="top-bar-info py-2 px-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <time id="current-date-time" class="date-badge">
+                <span>🕒 Loading current date &amp; time...</span>
+            </time>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
+                    🎨 Change Theme
+                </button>
+                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
+                    Sign Up
+                </button>
             </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="active">Contacts</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-
-        <aside class="sidebar">
-
-            <h2>Contact</h2>
-
-            <ul class="sidebar-menu">
-                <li><a href="#contact-main">Send Message</a></li>
-                <li><a href="#contact-info">Contact Info</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-
-            <div class="sidebar-info">
-
-                <h3>Project</h3>
-                <p>CodeQuiz</p>
-
-                <h3>Course</h3>
-                <p>Front-End Development</p>
-
-                <h3>Team</h3>
-                <p>Kassymkhan & Darkhan</p>
-
-            </div>
-
-        </aside>
-
-
-        <main class="main-content">
-
-
-            <section class="contact-hero">
-
-                <div>
-
-                    <span class="section-label">
-                        CONTACT US
-                    </span>
-
-                    <h1>
-                        Have a Question?
-                        Send Us a Message.
-                    </h1>
-
-                    <p>
-                        Have feedback about CodeQuiz or questions about
-                        our project? You can contact our team using the
-                        form below.
-                    </p>
-
-                </div>
-
-                <div class="contact-hero-box">
-
-                    <div class="contact-symbol">
-                        &lt;/&gt;
-                    </div>
-
-                    <h3>CodeQuiz Team</h3>
-
-                    <p>
-                        Learn. Practice. Improve.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <section class="contact-content" id="contact-main">
-
-
-                <div class="contact-form-container">
-
-                    <div class="section-heading">
-
-                        <span class="section-label">
-                            SEND A MESSAGE
-                        </span>
-
-                        <h2>Contact Form</h2>
-
-                        <p>
-                            Complete the form and send your message to our team.
-                        </p>
-
-                    </div>
-
-
-                    <form id="contact-form" action="#" method="get">
-
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-
-                                <label for="user-name">
-                                    Your Name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="user-name"
-                                    name="name"
-                                    placeholder="Enter your name"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="user-email">
-                                    Email Address
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="user-email"
-                                    name="email"
-                                    placeholder="name@example.com"
-                                    required
-                                >
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="topic-select">
-                                Select Topic
-                            </label>
-
-                            <select id="topic-select" name="topic">
-
-                                <option value="general">
-                                    General Question
-                                </option>
-
-                                <option value="quiz">
-                                    Quiz Question
-                                </option>
-
-                                <option value="feedback">
-                                    Website Feedback
-                                </option>
-
-                                <option value="collaboration">
-                                    Collaboration
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="user-message">
-                                Your Message
-                            </label>
-
-                            <textarea
-                                id="user-message"
-                                name="message"
-                                rows="6"
-                                placeholder="Write your message here..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button type="submit" class="submit-btn">
-                            Send Message
-                        </button>
-
-                    </form>
-
-                </div>
-
-
-                <div class="contact-info-container" id="contact-info">
-
-                    <span class="section-label">
-                        CONTACT INFORMATION
-                    </span>
-
-                    <h2>Get in Touch</h2>
-
-                    <p>
-                        You can contact the CodeQuiz team for questions,
-                        suggestions or feedback.
-                    </p>
-
-
-                    <div class="contact-info-card">
-
-                        <div class="contact-icon">
-                            01
-                        </div>
-
-                        <div>
-                            <h3>Project</h3>
-                            <p>CodeQuiz</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-info-card">
-
-                        <div class="contact-icon">
-                            02
-                        </div>
-
-                        <div>
-                            <h3>University</h3>
-                            <p>Astana IT University</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-info-card">
-
-                        <div class="contact-icon">
-                            03
-                        </div>
-
-                        <div>
-                            <h3>Team</h3>
-                            <p>Kassymkhan & Darkhan</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-info-card">
-
-                        <div class="contact-icon">
-                            04
-                        </div>
-
-                        <div>
-                            <h3>Course</h3>
-                            <p>Front-End Development</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="feedback-section" id="feedback">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        YOUR FEEDBACK
-                    </span>
-
-                    <h2>Help Us Improve CodeQuiz</h2>
-
-                    <p>
-                        Your suggestions help us make the website
-                        more useful and interesting for students.
-                    </p>
-
-                </div>
-
-
-                <div class="feedback-cards">
-
-                    <div class="feedback-card">
-
-                        <span>01</span>
-
-                        <h3>Quiz Ideas</h3>
-
-                        <p>
-                            Suggest programming languages or topics
-                            for future quizzes.
-                        </p>
-
-                    </div>
-
-
-                    <div class="feedback-card">
-
-                        <span>02</span>
-
-                        <h3>Website Design</h3>
-
-                        <p>
-                            Tell us how we can improve the website
-                            design and user experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="feedback-card">
-
-                        <span>03</span>
-
-                        <h3>Report a Problem</h3>
-
-                        <p>
-                            Let us know if you find a broken link
-                            or another website problem.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-        </main>
-
-
-        <footer>
-
-            <div class="footer-logo">
-
-                <h3>CodeQuiz</h3>
-
-                <p>
-                    Learn. Practice. Improve.
-                </p>
-
-            </div>
-
-
-            <p>
-                Developers: Kassymkhan & Darkhan
-            </p>
-
-
-            <p>
-                © 2026 CodeQuiz
-            </p>
-
-        </footer>
-
+        </div>
     </div>
 
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="study.html">Study Lab</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contacts</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
+                                📬 Newsletter
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <section class="contact-section p-3 p-sm-4 mb-4">
+            <h1>Contact Us</h1>
+            <p class="text-secondary">
+                Have questions or feedback? Practice sending your details with the contact form below.
+            </p>
+
+            <img
+                src="images/assets/photo-1563762270340-3f5fde3243cd.jpg"
+                alt="Email and contact illustration"
+                class="contact-img mx-auto my-3"
+            >
+
+            <p class="demo-note text-center">Course demo: your message is validated locally and is not sent.</p>
+            <form id="contact-form" novalidate class="mx-auto">
+                <div id="contact-feedback" class="d-none"></div>
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <label for="user-name" class="form-label fw-bold">Your Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="user-name" aria-describedby="err-user-name" name="name" placeholder="Enter your full name" autocomplete="name" required>
+                        <div class="invalid-feedback" id="err-user-name" aria-live="polite">Please enter your name (at least 2 letters).</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label for="user-email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <span class="input-group-text" aria-hidden="true">@</span>
+                            <input type="email" class="form-control" id="user-email" aria-describedby="err-user-email" name="email" placeholder="name@gmail.com" autocomplete="email" required>
+                        </div>
+                        <div class="invalid-feedback" id="err-user-email" aria-live="polite">Please enter a valid, non-fake email address.</div>
+                    </div>
+                    <div class="col-12">
+                        <label for="topic-select" class="form-label fw-bold">Topic</label>
+                        <select id="topic-select" name="topic" class="form-select">
+                            <option value="general">General Question</option>
+                            <option value="collaboration">Collaboration &amp; Suggestions</option>
+                            <option value="feedback">Quiz Feedback / Bug Report</option>
+                        </select>
+                    </div>
+                    <fieldset class="col-12">
+                        <legend class="form-label fs-6 fw-bold mb-2">Preferred reply method</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reply-preference" id="reply-email" value="email" checked>
+                            <label class="form-check-label" for="reply-email">Email</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reply-preference" id="reply-no-preference" value="no-preference">
+                            <label class="form-check-label" for="reply-no-preference">No preference</label>
+                        </div>
+                    </fieldset>
+                    <div class="col-12">
+                        <label for="user-message" class="form-label fw-bold">Message <span class="text-danger">*</span></label>
+                        <textarea id="user-message" aria-describedby="err-user-message" name="message" class="form-control" rows="5" placeholder="Enter your message (minimum 10 characters)..." required></textarea>
+                        <div class="invalid-feedback" id="err-user-message" aria-live="polite">Please write a message with at least 10 characters.</div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="yes" id="contact-consent" aria-describedby="err-contact-consent" required>
+                            <label class="form-check-label" for="contact-consent">I agree to be contacted about this message. <span class="text-danger">*</span></label>
+                            <div class="invalid-feedback" id="err-contact-consent" aria-live="polite">You must consent to be contacted.</div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- TASK 3: Popup Subscription or Registration Form Modal -->
+    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+        <div class="custom-modal-card">
+            <div class="modal-header-custom">
+                <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body-custom">
+                <p class="demo-note">Course demo: no account is created and no email is sent.</p>
+                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                </div>
+
+                <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
+                <div id="tab-register" class="modal-tab-content active" role="tabpanel" aria-labelledby="modal-tab-register">
+                    <div id="reg-success-message" data-form-success class="d-none"></div>
+                    <form id="registration-form" novalidate>
+                        <div class="mb-3">
+                            <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
+                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
+                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
+                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
+                            <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Quick Subscribe Form (Task 3: Popup Subscription) -->
+                <div id="tab-subscribe" class="modal-tab-content" role="tabpanel" aria-labelledby="modal-tab-subscribe" hidden>
+                    <div id="sub-success-message" data-form-success class="d-none"></div>
+                    <p class="text-muted mb-3">Subscribe to receive new quiz notifications, programming tips, and course announcements.</p>
+                    <form id="quick-subscribe-form" novalidate>
+                        <div class="mb-3">
+                            <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
+                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required Footer: Must contain all team members' names -->
+    <footer class="site-footer py-4 px-3 mt-lg-4">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
+            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
+        </div>
+    </footer>
+
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
+
+    <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/assignment5.js"></script>
 
 </body>
 

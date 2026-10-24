@@ -2,426 +2,239 @@
 <html lang="en">
 
 <head>
+    <!-- Assignment #4: Introduction to JavaScript - Darkhan & Kassymkhan -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>About Us - CodeQuiz</title>
 
+    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
 <body>
 
-    <div class="page-layout">
-
-        <header id="main-header">
-
-            <div class="logo">
-                <h1>CodeQuiz</h1>
+    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
+    <div class="top-bar-info py-2 px-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <time id="current-date-time" class="date-badge">
+                <span>🕒 Loading current date &amp; time...</span>
+            </time>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
+                    🎨 Change Theme
+                </button>
+                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
+                    Sign Up
+                </button>
             </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="contact.html">Contacts</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-
-        <aside class="sidebar">
-
-            <h2>About CodeQuiz</h2>
-
-            <ul class="sidebar-menu">
-                <li><a href="#about-project">Our Project</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#skills">Our Skills</a></li>
-                <li><a href="#process">Development</a></li>
-                <li><a href="#roles">Team Roles</a></li>
-            </ul>
-
-            <div class="sidebar-info">
-                <h3>Project</h3>
-                <p>Front-End Development</p>
-
-                <h3>Website</h3>
-                <p>CodeQuiz</p>
-
-                <h3>Team Members</h3>
-                <p>2 Developers</p>
-            </div>
-
-        </aside>
-
-
-        <main class="main-content">
-
-            <section class="about-hero" id="about-project">
-
-                <div class="about-hero-text">
-
-                    <span class="section-label">
-                        ABOUT THE PROJECT
-                    </span>
-
-                    <h1>
-                        Learn Programming.
-                        Test Your Knowledge.
-                    </h1>
-
-                    <p>
-                        CodeQuiz is an educational website created for students
-                        who want to practice programming through simple and
-                        interactive quizzes.
-                    </p>
-
-                    <a href="quiz.html" class="button">
-                        Explore Quizzes
-                    </a>
-
-                </div>
-
-                <div class="hero-code-card">
-
-                    <div class="code-card-top">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <div class="code-content">
-                        <p>&lt;CodeQuiz&gt;</p>
-                        <p>HTML + CSS</p>
-                        <p>Java + Python</p>
-                        <p>Learn. Practice. Improve.</p>
-                        <p>&lt;/CodeQuiz&gt;</p>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="team-section" id="team">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        OUR TEAM
-                    </span>
-
-                    <h2>Meet the Developers</h2>
-
-                    <p>
-                        CodeQuiz was created by two Front-End Development students.
-                    </p>
-
-                </div>
-
-
-                <div class="team-container">
-
-                    <article class="team-card">
-
-                        <div class="member-avatar">
-                            K
-                        </div>
-
-                        <div class="member-info">
-
-                            <span class="member-role">
-                                Front-End Developer
-                            </span>
-
-                            <h3>Kassymkhan</h3>
-
-                            <p>
-                                Responsible for designing and developing the
-                                About Us and Contacts pages of CodeQuiz.
-                            </p>
-
-                            <div class="member-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>UI Design</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="team-card">
-
-                        <div class="member-avatar">
-                            D
-                        </div>
-
-                        <div class="member-info">
-
-                            <span class="member-role">
-                                Front-End Developer
-                            </span>
-
-                            <h3>Darkhan</h3>
-
-                            <p>
-                                Responsible for designing and developing the
-                                Home and Quiz pages of CodeQuiz.
-                            </p>
-
-                            <div class="member-tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>Quiz Design</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-
-            <section class="skills-section" id="skills">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        TECHNOLOGIES
-                    </span>
-
-                    <h2>Skills We Used</h2>
-
-                </div>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-                        <div class="skill-number">01</div>
-                        <h3>HTML5</h3>
-                        <p>
-                            Used to create the structure and content
-                            of the website.
-                        </p>
-                    </div>
-
-
-                    <div class="skill-card">
-                        <div class="skill-number">02</div>
-                        <h3>CSS3</h3>
-                        <p>
-                            Used to style pages and create a modern
-                            website design.
-                        </p>
-                    </div>
-
-
-                    <div class="skill-card">
-                        <div class="skill-number">03</div>
-                        <h3>Flexbox</h3>
-                        <p>
-                            Used for navigation, cards and component
-                            alignment.
-                        </p>
-                    </div>
-
-
-                    <div class="skill-card">
-                        <div class="skill-number">04</div>
-                        <h3>CSS Grid</h3>
-                        <p>
-                            Used to create responsive page layouts
-                            and sections.
-                        </p>
-                    </div>
-
-
-                    <div class="skill-card">
-                        <div class="skill-number">05</div>
-                        <h3>Responsive Design</h3>
-                        <p>
-                            Helps the website work correctly on
-                            different screen sizes.
-                        </p>
-                    </div>
-
-
-                    <div class="skill-card">
-                        <div class="skill-number">06</div>
-                        <h3>GitHub</h3>
-                        <p>
-                            Used to store, manage and publish the
-                            project online.
-                        </p>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="process-section" id="process">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        OUR PROCESS
-                    </span>
-
-                    <h2>How We Built CodeQuiz</h2>
-
-                </div>
-
-
-                <div class="process-container">
-
-                    <div class="process-card">
-                        <span>01</span>
-
-                        <div>
-                            <h3>Plan</h3>
-                            <p>
-                                We selected the CodeQuiz idea and planned
-                                the website pages.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="process-card">
-                        <span>02</span>
-
-                        <div>
-                            <h3>Structure</h3>
-                            <p>
-                                We created Home, Quiz, About and Contact
-                                pages using HTML.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="process-card">
-                        <span>03</span>
-
-                        <div>
-                            <h3>Design</h3>
-                            <p>
-                                We styled the website using CSS, Flexbox
-                                and CSS Grid.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="process-card">
-                        <span>04</span>
-
-                        <div>
-                            <h3>Test</h3>
-                            <p>
-                                We checked navigation, responsiveness
-                                and website content.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="process-card">
-                        <span>05</span>
-
-                        <div>
-                            <h3>Publish</h3>
-                            <p>
-                                We pushed the project to GitHub and
-                                published the website online.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="team-roles-table" id="roles">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        RESPONSIBILITIES
-                    </span>
-
-                    <h2>Team Roles</h2>
-
-                </div>
-
-
-                <div class="table-wrapper">
-
-                    <table>
-
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Role</th>
-                                <th>Created Pages</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>Kassymkhan</td>
-                                <td>Front-End Developer</td>
-                                <td>About Us, Contacts</td>
-                            </tr>
-
-                            <tr>
-                                <td>Darkhan</td>
-                                <td>Front-End Developer</td>
-                                <td>Home, Quiz</td>
-                            </tr>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-        <footer>
-
-            <div class="footer-logo">
-                <h3>CodeQuiz</h3>
-                <p>Learn. Practice. Improve.</p>
-            </div>
-
-            <p>
-                Developers: Kassymkhan & Darkhan
-            </p>
-
-            <p>
-                © 2026 CodeQuiz
-            </p>
-
-        </footer>
-
+        </div>
     </div>
 
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="study.html">Study Lab</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
+                                📬 Newsletter
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <section class="about-hero text-center p-3 p-sm-4 mb-4">
+            <h1>Our Team</h1>
+            <p class="lead text-secondary">
+                Welcome to CodeQuiz! We developed this platform
+                as part of our Front-End Web Development coursework at Astana IT University.
+            </p>
+        </section>
+
+        <section class="team-bio mb-4">
+            <h2>About the Developers</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <article class="card h-100">
+                        <img src="images/assets/photo-1522071820081-009f0129c71c.jpg" alt="Kassymkhan collaborating with the CodeQuiz team" class="card-img-top team-image">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Kassymkhan</h3>
+                            <p class="card-text">
+                                Kassymkhan developed the About Us and Contacts pages, implemented the Custom FAQ Accordion (Task 2), the Popup Subscription/Registration Modal (Task 3), and the Dynamic Background Color Switcher (Task 4).
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="card h-100">
+                        <img src="images/assets/photo-1519389950473-47ba0277781c.jpg" alt="Darkhan collaborating with the CodeQuiz team" class="card-img-top team-image">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Darkhan Saduakasov</h3>
+                            <p class="card-text">
+                                Darkhan developed the Home and Quiz pages, implemented the Comprehensive Form Validation logic (Task 1), the Real-time Date and Time display (Task 5), and the Interactive Quiz Evaluation Engine.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-list p-3 p-sm-4 mb-4">
+            <h2>Our Skills and Technologies</h2>
+            <ul>
+                <li>HTML5 Semantic Markup &amp; Accessibility (ARIA)</li>
+                <li>CSS3 Flexbox, Grid, Custom Properties, Transitions</li>
+                <li>Bootstrap 5.3.3 Framework Integration</li>
+                <li>Vanilla JavaScript (DOM Manipulation, Events, Date Object, Form Validation)</li>
+                <li>Git Version Control &amp; GitHub Collaboration</li>
+            </ul>
+        </section>
+
+        <section class="project-steps p-3 p-sm-4 mb-4">
+            <h2>How We Created and Upgraded CodeQuiz</h2>
+            <ol>
+                <li>Created semantic HTML pages and structured content.</li>
+                <li>Modernized responsive layout with Bootstrap 5 and custom CSS.</li>
+                <li>Implemented JavaScript Form Validation with strict error handling.</li>
+                <li>Engineered smooth FAQ Accordion and interactive Popup Modal.</li>
+                <li>Added dynamic background color cycling and live Date/Time clock.</li>
+                <li>Tested cross-browser compatibility and responsiveness.</li>
+            </ol>
+        </section>
+
+        <section class="team-roles-table mb-4">
+            <h2 id="team-roles-heading">Team Roles and JavaScript Tasks</h2>
+            <div class="table-responsive" role="region" aria-labelledby="team-roles-heading" tabindex="0">
+            <table class="table table-bordered table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Created Pages</th>
+                        <th>JavaScript Components (Assignment #4)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kassymkhan</strong></td>
+                        <td>Front-End Developer</td>
+                        <td>about.html, contact.html</td>
+                        <td>Task 2 (FAQ Accordion), Task 3 (Popup Modal), Task 4 (Background Color Switcher)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Darkhan Saduakasov</strong></td>
+                        <td>Front-End Developer</td>
+                        <td>index.html, quiz.html</td>
+                        <td>Task 1 (Form Validation), Task 5 (Live Date/Time Display), Interactive Quiz Engine</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TASK 3: Popup Subscription or Registration Form Modal -->
+    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+        <div class="custom-modal-card">
+            <div class="modal-header-custom">
+                <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body-custom">
+                <p class="demo-note">Course demo: no account is created and no email is sent.</p>
+                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                </div>
+
+                <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
+                <div id="tab-register" class="modal-tab-content active" role="tabpanel" aria-labelledby="modal-tab-register">
+                    <div id="reg-success-message" data-form-success class="d-none"></div>
+                    <form id="registration-form" novalidate>
+                        <div class="mb-3">
+                            <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
+                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
+                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
+                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
+                            <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Quick Subscribe Form (Task 3: Popup Subscription) -->
+                <div id="tab-subscribe" class="modal-tab-content" role="tabpanel" aria-labelledby="modal-tab-subscribe" hidden>
+                    <div id="sub-success-message" data-form-success class="d-none"></div>
+                    <p class="text-muted mb-3">Subscribe to receive new quiz notifications, programming tips, and course announcements.</p>
+                    <form id="quick-subscribe-form" novalidate>
+                        <div class="mb-3">
+                            <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
+                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required Footer: Must contain all team members' names -->
+    <footer class="site-footer py-4 px-3 mt-lg-4">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
+            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
+        </div>
+    </footer>
+
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
+
+    <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/assignment5.js"></script>
 
 </body>
 

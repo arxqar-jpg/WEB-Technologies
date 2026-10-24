@@ -2,455 +2,267 @@
 <html lang="en">
 
 <head>
+    <!-- Assignment #4: Introduction to JavaScript - Darkhan & Kassymkhan -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CodeQuiz - Quizzes</title>
 
+    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/assignment5.css">
 </head>
 
-<body class="quiz-page">
+<body>
 
-    <div class="page-layout">
-
-        <header id="main-header">
-
-            <div class="logo">
-                <h1>CodeQuiz</h1>
+    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
+    <div class="top-bar-info py-2 px-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <time id="current-date-time" class="date-badge">
+                <span>🕒 Loading current date &amp; time...</span>
+            </time>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
+                    🎨 Change Theme
+                </button>
+                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
+                    Sign Up
+                </button>
             </div>
-
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="quiz.html" class="active">Quiz</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contacts</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
-
-        <aside class="sidebar">
-
-            <h2>Quiz Menu</h2>
-
-            <ul>
-                <li><a href="#java">Java Quiz</a></li>
-                <li><a href="#python">Python Quiz</a></li>
-                <li><a href="#htmlcss">HTML & CSS Quiz</a></li>
-            </ul>
-
-            <div class="sidebar-info">
-
-                <h3>Topics</h3>
-                <p>3 quizzes</p>
-
-                <h3>Questions</h3>
-                <p>9 questions</p>
-
-                <h3>Difficulty</h3>
-                <p>Beginner</p>
-
-            </div>
-
-        </aside>
-
-
-        <main class="main-content">
-
-            <section class="welcome quiz-hero">
-
-                <div class="welcome-text">
-
-                    <span class="section-label">
-                        CODEQUIZ CHALLENGE
-                    </span>
-
-                    <h2>
-                        Test Your Coding Skills
-                    </h2>
-
-                    <p>
-                        Choose a programming topic, answer the questions
-                        and check how well you know the basics.
-                    </p>
-
-                    <a href="#java" class="button">
-                        Start Quiz
-                    </a>
-
-                </div>
-
-                <img
-                    class="quiz-image"
-                    src="images/Quiz.png"
-                    alt="Programming quiz"
-                >
-
-            </section>
-
-
-            <section class="quiz-section" id="java">
-
-                <div class="quiz-title">
-
-                    <div>
-                        <span class="section-label">
-                            QUIZ 01
-                        </span>
-
-                        <h2>Java Quiz</h2>
-                    </div>
-
-                    <span class="quiz-badge">
-                        3 Questions
-                    </span>
-
-                </div>
-
-
-                <form>
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 01
-                        </span>
-
-                        <h3>
-                            Which keyword is used to create a class?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="java1">
-                            class
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java1">
-                            def
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java1">
-                            function
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 02
-                        </span>
-
-                        <h3>
-                            Which method starts a Java program?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="java2">
-                            main()
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java2">
-                            start()
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java2">
-                            run()
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 03
-                        </span>
-
-                        <h3>
-                            Which symbol ends a Java statement?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="java3">
-                            ;
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java3">
-                            :
-                        </label>
-
-                        <label>
-                            <input type="radio" name="java3">
-                            #
-                        </label>
-
-                    </div>
-
-
-                    <button type="submit" class="quiz-submit">
-                        Submit Java Answers
-                    </button>
-
-                </form>
-
-            </section>
-
-
-            <section class="quiz-section" id="python">
-
-                <div class="quiz-title">
-
-                    <div>
-                        <span class="section-label">
-                            QUIZ 02
-                        </span>
-
-                        <h2>Python Quiz</h2>
-                    </div>
-
-                    <span class="quiz-badge">
-                        3 Questions
-                    </span>
-
-                </div>
-
-
-                <form>
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 01
-                        </span>
-
-                        <h3>
-                            Which keyword creates a function in Python?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="python1">
-                            def
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python1">
-                            function
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python1">
-                            class
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 02
-                        </span>
-
-                        <h3>
-                            Which function prints text?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="python2">
-                            print()
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python2">
-                            show()
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python2">
-                            write()
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 03
-                        </span>
-
-                        <h3>
-                            Python files usually use which extension?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="python3">
-                            .py
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python3">
-                            .java
-                        </label>
-
-                        <label>
-                            <input type="radio" name="python3">
-                            .html
-                        </label>
-
-                    </div>
-
-
-                    <button type="submit" class="quiz-submit">
-                        Submit Python Answers
-                    </button>
-
-                </form>
-
-            </section>
-
-
-            <section class="quiz-section" id="htmlcss">
-
-                <div class="quiz-title">
-
-                    <div>
-                        <span class="section-label">
-                            QUIZ 03
-                        </span>
-
-                        <h2>HTML & CSS Quiz</h2>
-                    </div>
-
-                    <span class="quiz-badge">
-                        3 Questions
-                    </span>
-
-                </div>
-
-
-                <form>
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 01
-                        </span>
-
-                        <h3>
-                            What does HTML stand for?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="html1">
-                            HyperText Markup Language
-                        </label>
-
-                        <label>
-                            <input type="radio" name="html1">
-                            HighText Machine Language
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 02
-                        </span>
-
-                        <h3>
-                            Which tag is used for a paragraph?
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="html2">
-                            &lt;p&gt;
-                        </label>
-
-                        <label>
-                            <input type="radio" name="html2">
-                            &lt;h1&gt;
-                        </label>
-
-                        <label>
-                            <input type="radio" name="html2">
-                            &lt;img&gt;
-                        </label>
-
-                    </div>
-
-
-                    <div class="question">
-
-                        <span class="question-number">
-                            Question 03
-                        </span>
-
-                        <h3>
-                            CSS is mainly used for:
-                        </h3>
-
-                        <label>
-                            <input type="radio" name="html3">
-                            Styling
-                        </label>
-
-                        <label>
-                            <input type="radio" name="html3">
-                            Database
-                        </label>
-
-                        <label>
-                            <input type="radio" name="html3">
-                            Server
-                        </label>
-
-                    </div>
-
-
-                    <button type="submit" class="quiz-submit">
-                        Submit HTML & CSS Answers
-                    </button>
-
-                </form>
-
-            </section>
-
-        </main>
-
-
-        <footer>
-
-            <div class="footer-logo">
-                <h3>CodeQuiz</h3>
-                <p>Learn. Practice. Improve.</p>
-            </div>
-
-            <p>
-                Developers: Kassymkhan & Darkhan
-            </p>
-
-            <p>
-                © 2026 CodeQuiz
-            </p>
-
-        </footer>
-
+        </div>
     </div>
 
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="study.html">Study Lab</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
+                                📬 Newsletter
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-lg-5">
+
+        <section class="welcome text-center py-3 px-2 mb-4">
+            <h1>Interactive Programming Quizzes</h1>
+            <p class="text-secondary">
+                Select your answers and click <strong>Submit Answers</strong> to evaluate your score in real-time with JavaScript!
+            </p>
+            <img class="quiz-image mt-3" src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt="Programming code on a computer screen">
+        </section>
+
+        <div class="row g-4">
+            <!-- Java Quiz -->
+            <section class="col-12 col-lg-4" id="java">
+                <div class="quiz-section p-3 p-sm-4 h-100">
+                    <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                        <h2 class="h4 m-0 text-primary">Java Quiz</h2>
+                        <span class="badge bg-primary">3 Questions</span>
+                    </div>
+
+                    <form id="java-quiz-form">
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">1. Which keyword is used to create a class?</h3>
+                            <label><input type="radio" name="java1" value="class"> <code>class</code></label>
+                            <label><input type="radio" name="java1" value="def"> <code>def</code></label>
+                            <label><input type="radio" name="java1" value="function"> <code>function</code></label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">2. Which method starts a Java program?</h3>
+                            <label><input type="radio" name="java2" value="main()"> <code>main()</code></label>
+                            <label><input type="radio" name="java2" value="start()"> <code>start()</code></label>
+                            <label><input type="radio" name="java2" value="run()"> <code>run()</code></label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">3. Which symbol ends a Java statement?</h3>
+                            <label><input type="radio" name="java3" value=";"> <code>;</code> (Semicolon)</label>
+                            <label><input type="radio" name="java3" value=":"> <code>:</code> (Colon)</label>
+                            <label><input type="radio" name="java3" value="#"> <code>#</code> (Hash)</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-2">Submit Java Answers</button>
+                    </form>
+                    <div id="java-quiz-result" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <!-- Python Quiz -->
+            <section class="col-12 col-lg-4" id="python">
+                <div class="quiz-section p-3 p-sm-4 h-100">
+                    <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                        <h2 class="h4 m-0 text-success">Python Quiz</h2>
+                        <span class="badge bg-success">3 Questions</span>
+                    </div>
+
+                    <form id="python-quiz-form">
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">1. Which keyword creates a function in Python?</h3>
+                            <label><input type="radio" name="python1" value="def"> <code>def</code></label>
+                            <label><input type="radio" name="python1" value="function"> <code>function</code></label>
+                            <label><input type="radio" name="python1" value="class"> <code>class</code></label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">2. Which function prints text to console?</h3>
+                            <label><input type="radio" name="python2" value="print()"> <code>print()</code></label>
+                            <label><input type="radio" name="python2" value="show()"> <code>show()</code></label>
+                            <label><input type="radio" name="python2" value="write()"> <code>write()</code></label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">3. Python files usually use which extension?</h3>
+                            <label><input type="radio" name="python3" value=".py"> <code>.py</code></label>
+                            <label><input type="radio" name="python3" value=".java"> <code>.java</code></label>
+                            <label><input type="radio" name="python3" value=".html"> <code>.html</code></label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 mt-2">Submit Python Answers</button>
+                    </form>
+                    <div id="python-quiz-result" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <!-- HTML & CSS Quiz -->
+            <section class="col-12 col-lg-4" id="htmlcss">
+                <div class="quiz-section p-3 p-sm-4 h-100">
+                    <div class="d-flex align-items-center justify-content-between border-bottom pb-2 mb-3">
+                        <h2 class="h4 m-0 text-info">HTML &amp; CSS Quiz</h2>
+                        <span class="badge bg-info text-dark">3 Questions</span>
+                    </div>
+
+                    <form id="html-quiz-form">
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">1. What does HTML stand for?</h3>
+                            <label><input type="radio" name="html1" value="HyperText Markup Language"> HyperText Markup Language</label>
+                            <label><input type="radio" name="html1" value="HighText Machine Language"> HighText Machine Language</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">2. Which tag is used for a paragraph?</h3>
+                            <label><input type="radio" name="html2" value="<p>"> <code>&lt;p&gt;</code></label>
+                            <label><input type="radio" name="html2" value="<h1>"> <code>&lt;h1&gt;</code></label>
+                            <label><input type="radio" name="html2" value="<img>"> <code>&lt;img&gt;</code></label>
+                        </div>
+
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold">3. CSS is mainly used for:</h3>
+                            <label><input type="radio" name="html3" value="Styling"> Styling and presentation</label>
+                            <label><input type="radio" name="html3" value="Database"> Database queries</label>
+                            <label><input type="radio" name="html3" value="Server"> Server configurations</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-info text-dark fw-bold w-100 mt-2">Submit Web Answers</button>
+                    </form>
+                    <div id="html-quiz-result" aria-live="polite"></div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- TASK 3: Popup Subscription or Registration Form Modal -->
+    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+        <div class="custom-modal-card">
+            <div class="modal-header-custom">
+                <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body-custom">
+                <p class="demo-note">Course demo: no account is created and no email is sent.</p>
+                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                </div>
+
+                <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
+                <div id="tab-register" class="modal-tab-content active" role="tabpanel" aria-labelledby="modal-tab-register">
+                    <div id="reg-success-message" data-form-success class="d-none"></div>
+                    <form id="registration-form" novalidate>
+                        <div class="mb-3">
+                            <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
+                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
+                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
+                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
+                            <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Quick Subscribe Form (Task 3: Popup Subscription) -->
+                <div id="tab-subscribe" class="modal-tab-content" role="tabpanel" aria-labelledby="modal-tab-subscribe" hidden>
+                    <div id="sub-success-message" data-form-success class="d-none"></div>
+                    <p class="text-muted mb-3">Subscribe to receive new quiz notifications, programming tips, and course announcements.</p>
+                    <form id="quick-subscribe-form" novalidate>
+                        <div class="mb-3">
+                            <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
+                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required Footer: Must contain all team members' names -->
+    <footer class="site-footer py-4 px-3 mt-lg-4">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
+            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
+        </div>
+    </footer>
+
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
+
+    <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/assignment5.js"></script>
 
 </body>
 

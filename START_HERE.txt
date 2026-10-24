@@ -1,0 +1,17 @@
+TEAM SPIRIT - CODEQUIZ / ASSIGNMENT 5
+Darkhan Saduakasov, Kassymkhan / SE 2508
+
+1. ZIP-ті толық шығарыңыз (Extract All).
+2. CodeQuiz папкасындағы index.html файлын ашыңыз.
+   PowerShell: start index.html
+3. Жаңа функциялар: Study Lab мәзірінде.
+   Үш қадамды жоспар -> тақырып сүзгісі -> сурет таңдау -> дыбыс.
+   Мәзірде бағыттама пернелерімен жүріп, Enter арқылы сілтемені ашуға болады.
+4. Есеп: report/assignment-5/Assignment-5-Report.pdf.
+   Есепке сайттың нақты жарияланған URL-ын енгізіп, PDF-ті сақтаңыз.
+5. Жариялау: DEPLOYMENT.md. Қорғау: DEFENSE.md.
+
+Бұрынғы төрт бет пен функциялар сақталған.
+Барлық сурет, jQuery, Bootstrap және дыбыс ZIP ішінде; интернет қажет емес.
+Тіркелу/contact/newsletter - frontend демо; нақты аккаунт не хат жасалмайды.
+Сайт бұл тапсырмада интернетке жарияланбаған.

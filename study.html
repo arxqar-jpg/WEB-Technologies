@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Assignment #4: Introduction to JavaScript - Darkhan & Kassymkhan -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Lab - CodeQuiz</title>
+
+    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/assignment5.css">
+</head>
+
+<body>
+
+    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
+    <div class="top-bar-info py-2 px-3">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <time id="current-date-time" class="date-badge">
+                <span>🕒 Loading current date &amp; time...</span>
+            </time>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
+                    🎨 Change Theme
+                </button>
+                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="study.html">Study Lab</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
+                                📬 Newsletter
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="study-lab" class="container py-4 py-lg-5">
+        <section class="lab-hero mb-4">
+            <div>
+                <p class="lab-eyebrow">TEAM SPIRIT / STUDY LAB</p>
+                <h1>A small plan. A better practice session.</h1>
+                <p class="lead mb-3">Choose a topic, build your practice plan and keep learning with CodeQuiz.</p>
+                <a href="#practice-planner" class="btn btn-primary">Build my plan</a>
+                <a href="quiz.html" class="btn btn-outline-secondary ms-2">Go to quizzes</a>
+            </div>
+            <div class="lab-stats" aria-label="CodeQuiz practice overview">
+                <div><strong>3</strong><span>programming topics</span></div>
+                <div><strong>9</strong><span>original quiz questions</span></div>
+                <div><strong>3</strong><span>steps to your next session</span></div>
+            </div>
+        </section>
+
+        <section id="practice-planner" class="mb-5" aria-labelledby="planner-heading">
+            <div class="lab-section-heading">
+                <div><p class="lab-eyebrow">01 / YOUR NEXT SESSION</p><h2 id="planner-heading">Build a practice plan</h2></div>
+                <span id="plan-step-status" class="lab-step-badge" role="status">Step 1 of 3</span>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                    <div class="lab-panel h-100">
+                        <ol class="plan-progress" aria-label="Planner steps">
+                            <li class="current" data-step="1" aria-current="step">1. Your name</li>
+                            <li data-step="2">2. Your topic</li>
+                            <li data-step="3">3. Review</li>
+                        </ol>
+                        <form id="practice-plan" novalidate>
+                            <fieldset id="plan-step-1" class="plan-step">
+                                <legend class="h4">Who is practising today?</legend>
+                                <p class="text-secondary">A name makes your session a little more personal.</p>
+                                <label class="form-label fw-bold" for="plan-name">Your name</label>
+                                <input id="plan-name" name="name" class="form-control" type="text" maxlength="100" autocomplete="name" placeholder="e.g. Darkhan" aria-describedby="err-plan-name" required>
+                                <div id="err-plan-name" class="invalid-feedback" aria-live="polite"></div>
+                            </fieldset>
+                            <fieldset id="plan-step-2" class="plan-step">
+                                <legend class="h4">Pick your focus</legend>
+                                <label class="form-label fw-bold" for="plan-topic">Programming topic</label>
+                                <select id="plan-topic" name="topic" class="form-select mb-3" aria-describedby="err-plan-topic" required>
+                                    <option value="">Choose a topic</option>
+                                    <option value="java">Java</option>
+                                    <option value="python">Python</option>
+                                    <option value="web">HTML &amp; CSS</option>
+                                </select>
+                                <div id="err-plan-topic" class="invalid-feedback" aria-live="polite"></div>
+                                <label class="form-label fw-bold" for="plan-minutes">Session length</label>
+                                <select id="plan-minutes" name="minutes" class="form-select" aria-describedby="err-plan-minutes">
+                                    <option value="10">10 minutes</option>
+                                    <option value="15" selected>15 minutes</option>
+                                    <option value="25">25 minutes</option>
+                                </select>
+                                <div id="err-plan-minutes" class="invalid-feedback" aria-live="polite"></div>
+                            </fieldset>
+                            <fieldset id="plan-step-3" class="plan-step">
+                                <legend class="h4">Ready to practise?</legend>
+                                <p id="plan-review" class="plan-review"></p>
+                                <p class="text-secondary">Use Back to make a change, or create your plan and open the quiz.</p>
+                            </fieldset>
+                            <div class="plan-actions mt-4">
+                                <button id="plan-back" class="btn btn-outline-secondary" type="button">Back</button>
+                                <button id="plan-next" class="btn btn-primary" type="button">Next</button>
+                                <button id="plan-finish" class="btn btn-primary" type="submit">Create my plan</button>
+                                <button id="plan-reset" class="btn btn-link ms-auto" type="button">Reset plan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <aside class="lab-panel plan-result-panel h-100" aria-labelledby="plan-result-heading">
+                        <p class="lab-eyebrow">YOUR PRACTICE CARD</p>
+                        <h3 id="plan-result-heading">Make time for one small win</h3>
+                        <p id="plan-result" role="status">Complete the three steps to create a plan for your next quiz.</p>
+                        <a id="plan-quiz-link" class="btn btn-primary" href="quiz.html">Open my quiz</a>
+                        <div class="sound-controls mt-4">
+                            <div class="form-check mb-2">
+                                <input id="sound-enabled" class="form-check-input" type="checkbox" checked>
+                                <label for="sound-enabled" class="form-check-label">Play a sound when my plan is ready</label>
+                            </div>
+                            <button id="test-sound" class="btn btn-sm btn-outline-secondary" type="button">Preview sound</button>
+                            <p id="sound-status" class="small text-secondary mt-2 mb-0" role="status">Sound is on. Nothing plays until you choose an action.</p>
+                        </div>
+                        <audio id="notification-sound" preload="auto" src="audio/notification.wav"></audio>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice-library" class="mb-5" aria-labelledby="library-heading">
+            <div class="lab-section-heading">
+                <div><p class="lab-eyebrow">02 / FIND YOUR FOCUS</p><h2 id="library-heading">Practice library</h2></div>
+                <p id="topic-count" class="text-secondary mb-0" role="status"></p>
+            </div>
+            <div class="topic-filters mb-3" role="group" aria-label="Filter practice topics">
+                <button type="button" class="topic-filter active" data-category="all" aria-pressed="true">All topics</button>
+                <button type="button" class="topic-filter" data-category="java" aria-pressed="false">Java</button>
+                <button type="button" class="topic-filter" data-category="python" aria-pressed="false">Python</button>
+                <button type="button" class="topic-filter" data-category="web" aria-pressed="false">HTML &amp; CSS</button>
+            </div>
+            <div id="practice-topics" class="row g-3"></div>
+        </section>
+
+        <section class="mb-4" aria-labelledby="gallery-heading">
+            <div class="lab-section-heading">
+                <div><p class="lab-eyebrow">03 / A LITTLE STUDY INSPIRATION</p><h2 id="gallery-heading">Choose your study view</h2></div>
+                <p class="text-secondary mb-0">Select a thumbnail to change the main picture.</p>
+            </div>
+            <div class="lab-panel study-gallery">
+                <figure class="mb-3">
+                    <img id="study-image" src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt="Programming code on a screen">
+                    <figcaption id="study-caption" class="pt-2 text-secondary">Focus on one concept, then test what you know.</figcaption>
+                </figure>
+                <div class="study-thumbnails" role="group" aria-label="Select a study picture">
+                    <button type="button" class="study-thumb selected" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" data-alt="Programming code on a screen" data-caption="Focus on one concept, then test what you know." aria-pressed="true" aria-label="Show a code editor">
+                        <img src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt=""><span>Focus</span>
+                    </button>
+                    <button type="button" class="study-thumb" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" data-alt="A laptop and a bright coding workspace" data-caption="Set aside a short session and give it your full attention." aria-pressed="false" aria-label="Show a coding workspace">
+                        <img src="images/assets/photo-1498050108023-c5249f4df085.jpg" alt=""><span>Practise</span>
+                    </button>
+                    <button type="button" class="study-thumb" data-src="images/assets/photo-1519389950473-47ba0277781c.jpg" data-alt="Students collaborating around a table" data-caption="Explain your answer to a teammate and learn together." aria-pressed="false" aria-label="Show a team studying together">
+                        <img src="images/assets/photo-1519389950473-47ba0277781c.jpg" alt=""><span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- TASK 3: Popup Subscription or Registration Form Modal -->
+    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+        <div class="custom-modal-card">
+            <div class="modal-header-custom">
+                <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
+                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body-custom">
+                <p class="demo-note">Course demo: no account is created and no email is sent.</p>
+                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                </div>
+
+                <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
+                <div id="tab-register" class="modal-tab-content active" role="tabpanel" aria-labelledby="modal-tab-register">
+                    <div id="reg-success-message" data-form-success class="d-none"></div>
+                    <form id="registration-form" novalidate>
+                        <div class="mb-3">
+                            <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
+                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
+                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
+                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
+                            <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Quick Subscribe Form (Task 3: Popup Subscription) -->
+                <div id="tab-subscribe" class="modal-tab-content" role="tabpanel" aria-labelledby="modal-tab-subscribe" hidden>
+                    <div id="sub-success-message" data-form-success class="d-none"></div>
+                    <p class="text-muted mb-3">Subscribe to receive new quiz notifications, programming tips, and course announcements.</p>
+                    <form id="quick-subscribe-form" novalidate>
+                        <div class="mb-3">
+                            <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
+                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                        </div>
+                        <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required Footer: Must contain all team members' names -->
+    <footer class="site-footer py-4 px-3 mt-lg-4">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
+            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
+        </div>
+    </footer>
+
+    <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
+
+    <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/assignment5.js"></script>
+
+</body>
+
+</html>
