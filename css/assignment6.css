@@ -1,0 +1,31 @@
+.scroll-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 2100;
+    background: #dce8ec;
+    pointer-events: none;
+}
+#scroll-progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #087f8c, #4e67ce, #c84a86);
+}
+.topic-search { position: relative; max-width: 650px; }
+#topic-suggestions { position: absolute; top: 100%; left: 0; right: 0; z-index: 20; list-style: none; }
+#topic-suggestions button { width: 100%; text-align: left; }
+#practice-topics mark { background: #ffe49a; color: #352400; }
+.action-toast {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2200;
+    max-width: calc(100vw - 32px);
+    border-radius: 6px;
+    background: #20232a;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.clipboard-buffer { position: fixed; left: -9999px; top: 0; }

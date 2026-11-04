@@ -1,62 +1,59 @@
-# Team Spirit - CodeQuiz, Assignment 5
+# CodeQuiz - Assignment 6
 
-**Members:** Darkhan Saduakasov and Kassymkhan  
-**Group:** SE 2508
+Team Spirit | Darkhan Saduakasov; Kassymkhan | SE 2508
 
-This project continues Assignment 4. The original Home, Quiz, About Us and Contacts pages, quiz questions, forms, FAQ, popup, live clock, colour switching, galleries and original assets remain. The previously requested simple JavaScript version is the base. A fifth page, Study Lab, adds Assignment 5 features.
+Extract the complete folder, then open index.html. No build is required. The required jQuery 4.0.0 CDN is in each page head; the same local version is used when the CDN is unavailable.
 
-## Open the site
+## Required features
 
-Extract the entire ZIP, then open `index.html` in a modern browser. In PowerShell opened inside the CodeQuiz folder:
+| Task | Location |
+|---|---|
+| 0: jQuery setup and ready message | All pages; head and js/script.js |
+| 1: live search/filter | Study Lab > Practice library |
+| 2: autocomplete suggestions | Same search field; click or Arrow/Enter |
+| 3: matching-word highlighting | The filtered practice cards |
+| 4: gradient scroll progress | Top edge of all five pages |
+| 5: animated counters | Study Lab overview: 3 topics, 9 questions, 3 steps |
+| 6: submit spinner and disabled button | Valid registration, newsletter and contact forms |
+| 7: fading notifications | Form completion and clipboard actions |
+| 8: clipboard copy/checkmark/tooltip | Create a practice plan, then Copy plan |
+| 9: lazy image loading | Images throughout the existing pages |
 
-```powershell
-start index.html
-```
+The original quizzes, forms, FAQ, clock, theme controls, category filters, planner, gallery and sound remain. Form submission is a frontend simulation.
 
-Use **Study Lab** in the navigation or **Build a Practice Plan** on Home to see the new features. jQuery 3.7.1, Bootstrap, pictures and the WAV notification are included locally. No installation, server, account or build is needed to use the website.
+## Evidence
 
-## Assignment 5 features
+report/assignment-6/Assignment-6-Report.pdf contains steps, code screenshots, webpage screenshots, reflection and deployment status.
+report/assignment-6/test-results.json: 19 Assignment 6 test groups passed.
+report/assignment-6/regression-results.json: 25 previous-feature groups passed with jQuery 4.
 
-- A three-step practice planner with required-field validation, Next/Back callbacks, preserved inputs, an object method that generates a summary, and a native addEventListener reset button.
-- A practice library built from an array of objects. A named filter callback and a for loop create the matching cards; a switch supplies the selected topic labels.
-- A thumbnail gallery that changes the main src/alt/caption and selection attributes, with jQuery fading.
-- Keyboard menu navigation on all five pages: arrow keys move focus, wrap at either end, and Home/End jump to the first/last item. Use Enter to follow a focused link.
-- A local notification sound for Preview and plan completion. A single audio element is paused/rewound before reuse, so rapid clicks do not layer new sounds. Sound can be disabled.
-- jQuery selectors, text, html, append and attr for DOM changes, click/keyup/submit events, hide/show/fade effects, css/animate and named callbacks. New code is in js/assignment5.js; new styles are in css/assignment5.css.
-
-The code uses var, ordinary functions, if/else, for, arrays, plain objects and switch. The assignment explicitly requires filter/higher-order functions, callbacks, objects and sound; these necessary parts accompany the supplied jQuery lecture methods. No framework, modules, arrow functions, Map, spread syntax or unnecessary app-code comments are added.
-
-## Report and defense
-
-- `report/assignment-5/Assignment-5-Report.pdf`: current report, with team/group, every requirement, implementation steps, actual webpage and source-code screenshots, tests and reflection. The public URL field is fillable.
-- `report/assignment-5/REPORT.md`: editable report text.
-- `report/assignment-5/REQUIREMENTS.md`: criterion-by-criterion mapping, including the chosen alternatives.
-- `report/assignment-5/screenshots/`: webpage and exact source-code captures.
-- `report/assignment-5/test-results.json`: completed 25-group verification record.
-- `DEFENSE.md`: Kazakh notes for both members.
-- `DEPLOYMENT.md`: publishing instructions and final checks.
-
-The Assignment 4 report and screenshots stay in report/. Earlier documentation is retained in history/.
-
-## Publication status
-
-The updated website is packaged locally. This task has not committed/pushed the team repository or deployed to a public hosting account. Publish and verify the updated site, enter its actual URL in the report, save the edited PDF, then submit it with the ZIP. Each member must submit and defend the assignment before the LMS deadline.
-
-## Optional developer checks
-
-Node.js is only needed for checks:
+Developer checks are optional and unnecessary to open the website:
 
 ```sh
 npm install
 npx playwright install chromium
 npm run check
 npm test
+npm run test:regression
 ```
 
-The current test runner is tests/assignment5-browser-tests.cjs. CODEQUIZ_CHANNEL=chrome selects installed Google Chrome; CODEQUIZ_TEST_PROFILE can identify a writable temporary profile directory. The completed suite used Chrome and offline file URLs, with 360/390/768/1440 px layouts. A real phone and other browser engines are not claimed as tested.
+Tests default to installed Google Chrome. CODEQUIZ_PLAYWRIGHT_PATH can identify an existing Playwright package directory. Tests create evidence only under report/assignment-6.
 
-## Form limitations
+## Push and publish
 
-Registration/newsletter/contact remain frontend course demos. Password spaces and known dummy/disposable email patterns are rejected; real mailbox ownership needs backend email verification. These forms do not create accounts, send messages/newsletters or store passwords. The planner is also local and resets on reload. The simple background selection resets when opening another page.
+1. Copy the CONTENTS of CodeQuiz into the root of the team's existing WEB-Technologies Git clone, preserving its .git folder/history.
+2. Review the changes, commit and push. GitHub Pages should rebuild from its configured branch/root.
+3. Verify https://arxqar-jpg.github.io/WEB-Technologies/index.html and study.html and the required interactions.
+4. After publishing, verify the public URL, then submit the report and project ZIP. Every member must submit and defend the assignment before the LMS deadline.
 
-Bundled licenses and sources are listed in ASSETS.md and vendor/.
+This package is prepared locally. The user will push and redeploy it.
+
+## Forest platform design
+
+The selected Forest interface is applied to all five pages. Headings use local Sora and body text uses local Figtree. The theme selector provides Forest, Midnight and Cobalt and retains the selection across pages.
+
+Overview and Study Lab reuse the same live topic library. On Overview, expand **Resources & FAQ** for the existing CSS-only card group, Bootstrap grids/cards, nine-image carousel and FAQ. These requirements remain available without crowding the quiz catalog.
+
+Quizzes now use nine practical, static code-reading questions: Java score/loop/object creation, Python list/function/loop behavior, and HTML forms/CSS selectors/responsive grid. All three topics still contain three questions and use the original client-side radio-form scoring. The Java and Python outputs were independently checked.
+
+Run `npm run test:platform` for the additional font, theme, navigation, scoring and layout checks. Font licenses are in vendor/fonts/.

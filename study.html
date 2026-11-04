@@ -10,77 +10,84 @@
     <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/assignment5.css">
+    <link rel="stylesheet" href="css/assignment6.css">
+    <link rel="stylesheet" href="css/platform.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery-fallback.js"></script>
 </head>
 
-<body>
+<body data-theme="forest">
+    <div class="scroll-track"><div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
 
-    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
-    <div class="top-bar-info py-2 px-3">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-            <time id="current-date-time" class="date-badge">
-                <span>🕒 Loading current date &amp; time...</span>
-            </time>
-            <div class="d-flex align-items-center gap-2">
-                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
-                    🎨 Change Theme
-                </button>
-                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
-                    Sign Up
-                </button>
+<svg class="icon-definitions" aria-hidden="true"><defs>
+<symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 4 3 4v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7-1-9 1Z"/></symbol>
+<symbol id="icon-plan" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8 2v4m8-4v4M8 11h8m-8 4h5"/></symbol>
+<symbol id="icon-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-15a3 3 0 0 1 0 6m4 9v-2a6 6 0 0 0-3-5"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+</defs></svg>
+    <header id="main-header" class="platform-sidebar">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar bg-dark p-0" aria-label="Main navigation">
+            <div class="sidebar-brand-row px-3 px-lg-4 py-3 py-lg-4">
+                <a class="navbar-brand m-0" href="index.html"><span class="brand-mark">cq</span><span class="brand-name">CodeQuiz</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             </div>
+            <div class="collapse navbar-collapse px-3 px-lg-4" id="mainNavigation">
+                <p class="nav-caption mt-4 mb-3 px-2">Navigation</p>
+                <ul class="navbar-nav w-100 gap-2"><li class="nav-item"><a class="nav-link px-3 py-2" href="index.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-grid"></use></svg>Overview</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="quiz.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-book"></use></svg>Quizzes</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2 active" aria-current="page" href="study.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-plan"></use></svg>Study Lab</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="about.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-team"></use></svg>About us</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Contacts</a></li>
+
+                    <li class="nav-item mt-3"><button type="button" class="btn btn-sm newsletter-link trigger-modal-btn" data-modal-tab="subscribe"><svg class="platform-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Newsletter</button></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar-meta mt-auto mx-4 pt-3 pb-4"><strong>Team Spirit</strong><span>SE 2508 · Web Technologies</span></div>
+    </header>
+    <div class="platform-topbar px-0 px-lg-4 px-xl-5">
+        <p class="page-location m-0">Workspace <span class="mx-2">/</span> <strong>Study Lab</strong></p>
+        <div class="topbar-actions d-flex align-items-center gap-2 gap-sm-3">
+            <time id="current-date-time" class="date-badge">Loading current date and time…</time>
+            <div class="btn-group theme-control" role="group" aria-label="Color theme">
+                <button id="btn-change-bg" type="button" class="btn theme-cycle px-2 px-sm-3" title="Switch color theme"><span class="theme-dot" aria-hidden="true"></span><span id="theme-name">Forest</span></button>
+                <button type="button" class="btn theme-toggle dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Choose color theme"></button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button type="button" class="dropdown-item" data-site-theme="forest">Forest</button></li>
+                    <li><button type="button" class="dropdown-item" data-site-theme="midnight">Midnight</button></li>
+                    <li><button type="button" class="dropdown-item" data-site-theme="cobalt">Cobalt</button></li>
+                </ul>
+            </div>
+            <button type="button" class="btn signup-button px-2 px-sm-3 trigger-modal-btn" data-modal-tab="register">Sign up</button>
         </div>
     </div>
 
-    <header id="main-header">
-        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavigation">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="study.html">Study Lab</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
-                        <li class="nav-item ms-lg-2">
-                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
-                                📬 Newsletter
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main id="study-lab" class="container py-4 py-lg-5">
-        <section class="lab-hero mb-4">
+    <main id="study-lab" class="container platform-main px-3 px-sm-4 px-xl-5 py-4">
+        <section class="lab-hero mb-4 p-0">
             <div>
-                <p class="lab-eyebrow">TEAM SPIRIT / STUDY LAB</p>
-                <h1>A small plan. A better practice session.</h1>
+
+                <h1>Practice planner</h1>
                 <p class="lead mb-3">Choose a topic, build your practice plan and keep learning with CodeQuiz.</p>
-                <a href="#practice-planner" class="btn btn-primary">Build my plan</a>
-                <a href="quiz.html" class="btn btn-outline-secondary ms-2">Go to quizzes</a>
+
+
             </div>
-            <div class="lab-stats" aria-label="CodeQuiz practice overview">
-                <div><strong>3</strong><span>programming topics</span></div>
-                <div><strong>9</strong><span>original quiz questions</span></div>
-                <div><strong>3</strong><span>steps to your next session</span></div>
+            <div class="lab-stats pt-3 pt-lg-0 ps-lg-4" aria-label="CodeQuiz practice overview">
+                <div><strong class="number-counter" data-count="3">3</strong><span>programming topics</span></div>
+                <div><strong class="number-counter" data-count="9">9</strong><span>original quiz questions</span></div>
+                <div><strong class="number-counter" data-count="3">3</strong><span>steps to your next session</span></div>
             </div>
         </section>
 
         <section id="practice-planner" class="mb-5" aria-labelledby="planner-heading">
-            <div class="lab-section-heading">
-                <div><p class="lab-eyebrow">01 / YOUR NEXT SESSION</p><h2 id="planner-heading">Build a practice plan</h2></div>
-                <span id="plan-step-status" class="lab-step-badge" role="status">Step 1 of 3</span>
+            <div class="lab-section-heading mb-3">
+                <div><h2 id="planner-heading">Build a practice plan</h2></div>
+                <span id="plan-step-status" class="lab-step-badge px-3 py-2" role="status">Step 1 of 3</span>
             </div>
             <div class="row g-4">
                 <div class="col-12 col-lg-7">
-                    <div class="lab-panel h-100">
-                        <ol class="plan-progress" aria-label="Planner steps">
+                    <div class="lab-panel h-100 p-3 p-sm-4">
+                        <ol class="plan-progress ps-0 pb-3 mb-4" aria-label="Planner steps">
                             <li class="current" data-step="1" aria-current="step">1. Your name</li>
                             <li data-step="2">2. Your topic</li>
                             <li data-step="3">3. Review</li>
@@ -88,7 +95,7 @@
                         <form id="practice-plan" novalidate>
                             <fieldset id="plan-step-1" class="plan-step">
                                 <legend class="h4">Who is practising today?</legend>
-                                <p class="text-secondary">A name makes your session a little more personal.</p>
+                                <p class="text-secondary">Enter your name to begin.</p>
                                 <label class="form-label fw-bold" for="plan-name">Your name</label>
                                 <input id="plan-name" name="name" class="form-control" type="text" maxlength="100" autocomplete="name" placeholder="e.g. Darkhan" aria-describedby="err-plan-name" required>
                                 <div id="err-plan-name" class="invalid-feedback" aria-live="polite"></div>
@@ -113,7 +120,7 @@
                             </fieldset>
                             <fieldset id="plan-step-3" class="plan-step">
                                 <legend class="h4">Ready to practise?</legend>
-                                <p id="plan-review" class="plan-review"></p>
+                                <p id="plan-review" class="plan-review p-3"></p>
                                 <p class="text-secondary">Use Back to make a change, or create your plan and open the quiz.</p>
                             </fieldset>
                             <div class="plan-actions mt-4">
@@ -126,12 +133,13 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-5">
-                    <aside class="lab-panel plan-result-panel h-100" aria-labelledby="plan-result-heading">
-                        <p class="lab-eyebrow">YOUR PRACTICE CARD</p>
-                        <h3 id="plan-result-heading">Make time for one small win</h3>
+                    <aside class="lab-panel plan-result-panel h-100 p-3 p-sm-4" aria-labelledby="plan-result-heading">
+
+                        <h3 id="plan-result-heading">Your practice plan</h3>
                         <p id="plan-result" role="status">Complete the three steps to create a plan for your next quiz.</p>
                         <a id="plan-quiz-link" class="btn btn-primary" href="quiz.html">Open my quiz</a>
-                        <div class="sound-controls mt-4">
+                        <button id="copy-plan" type="button" class="btn btn-outline-secondary" data-copy-target="plan-result" hidden>Copy plan</button>
+                        <div class="sound-controls mt-4 pt-3">
                             <div class="form-check mb-2">
                                 <input id="sound-enabled" class="form-check-input" type="checkbox" checked>
                                 <label for="sound-enabled" class="form-check-label">Play a sound when my plan is ready</label>
@@ -146,38 +154,43 @@
         </section>
 
         <section id="practice-library" class="mb-5" aria-labelledby="library-heading">
-            <div class="lab-section-heading">
-                <div><p class="lab-eyebrow">02 / FIND YOUR FOCUS</p><h2 id="library-heading">Practice library</h2></div>
+            <div class="lab-section-heading mb-3">
+                <div><h2 id="library-heading">Practice library</h2></div>
                 <p id="topic-count" class="text-secondary mb-0" role="status"></p>
             </div>
+            <div class="topic-search mb-3">
+                <label class="form-label fw-bold" for="topic-search">Search practice topics</label>
+                <input id="topic-search" type="search" class="form-control" placeholder="Search Java, Python or HTML &amp; CSS" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="topic-suggestions" aria-expanded="false">
+                <ul id="topic-suggestions" class="list-group" role="listbox" aria-label="Search suggestions" hidden></ul>
+            </div>
             <div class="topic-filters mb-3" role="group" aria-label="Filter practice topics">
-                <button type="button" class="topic-filter active" data-category="all" aria-pressed="true">All topics</button>
-                <button type="button" class="topic-filter" data-category="java" aria-pressed="false">Java</button>
-                <button type="button" class="topic-filter" data-category="python" aria-pressed="false">Python</button>
-                <button type="button" class="topic-filter" data-category="web" aria-pressed="false">HTML &amp; CSS</button>
+                <button type="button" class="topic-filter active btn btn-outline-primary px-2 px-sm-3 py-2" data-category="all" aria-pressed="true">All topics</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="java" aria-pressed="false">Java</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="python" aria-pressed="false">Python</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="web" aria-pressed="false">HTML &amp; CSS</button>
             </div>
             <div id="practice-topics" class="row g-3"></div>
         </section>
 
         <section class="mb-4" aria-labelledby="gallery-heading">
-            <div class="lab-section-heading">
-                <div><p class="lab-eyebrow">03 / A LITTLE STUDY INSPIRATION</p><h2 id="gallery-heading">Choose your study view</h2></div>
+            <div class="lab-section-heading mb-3">
+                <div><h2 id="gallery-heading">Choose your study view</h2></div>
                 <p class="text-secondary mb-0">Select a thumbnail to change the main picture.</p>
             </div>
-            <div class="lab-panel study-gallery">
+            <div class="lab-panel study-gallery p-3 p-sm-4 mx-auto">
                 <figure class="mb-3">
-                    <img id="study-image" src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt="Programming code on a screen">
+                    <img class="lazy-image" id="study-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt="Programming code on a screen">
                     <figcaption id="study-caption" class="pt-2 text-secondary">Focus on one concept, then test what you know.</figcaption>
                 </figure>
                 <div class="study-thumbnails" role="group" aria-label="Select a study picture">
-                    <button type="button" class="study-thumb selected" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" data-alt="Programming code on a screen" data-caption="Focus on one concept, then test what you know." aria-pressed="true" aria-label="Show a code editor">
-                        <img src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt=""><span>Focus</span>
+                    <button type="button" class="study-thumb selected btn btn-light p-1" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" data-alt="Programming code on a screen" data-caption="Focus on one concept, then test what you know." aria-pressed="true" aria-label="Show a code editor">
+                        <img class="lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" alt=""><span class="d-block py-1">Focus</span>
                     </button>
-                    <button type="button" class="study-thumb" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" data-alt="A laptop and a bright coding workspace" data-caption="Set aside a short session and give it your full attention." aria-pressed="false" aria-label="Show a coding workspace">
-                        <img src="images/assets/photo-1498050108023-c5249f4df085.jpg" alt=""><span>Practise</span>
+                    <button type="button" class="study-thumb btn btn-light p-1" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" data-alt="A laptop and a bright coding workspace" data-caption="Set aside a short session and give it your full attention." aria-pressed="false" aria-label="Show a coding workspace">
+                        <img class="lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" alt=""><span class="d-block py-1">Practise</span>
                     </button>
-                    <button type="button" class="study-thumb" data-src="images/assets/photo-1519389950473-47ba0277781c.jpg" data-alt="Students collaborating around a table" data-caption="Explain your answer to a teammate and learn together." aria-pressed="false" aria-label="Show a team studying together">
-                        <img src="images/assets/photo-1519389950473-47ba0277781c.jpg" alt=""><span>Share</span>
+                    <button type="button" class="study-thumb btn btn-light p-1" data-src="images/assets/photo-1519389950473-47ba0277781c.jpg" data-alt="Students collaborating around a table" data-caption="Explain your answer to a teammate and learn together." aria-pressed="false" aria-label="Show a team studying together">
+                        <img class="lazy-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1519389950473-47ba0277781c.jpg" alt=""><span class="d-block py-1">Share</span>
                     </button>
                 </div>
             </div>
@@ -185,17 +198,17 @@
     </main>
 
     <!-- TASK 3: Popup Subscription or Registration Form Modal -->
-    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+    <div id="custom-modal-overlay" class="custom-modal-overlay p-2 p-sm-3" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
         <div class="custom-modal-card">
-            <div class="modal-header-custom">
+            <div class="modal-header-custom px-3 px-sm-4 py-3">
                 <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
-                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+                <button type="button" id="modal-close-btn" class="modal-close-btn btn btn-dark btn-sm px-2 py-1" aria-label="Close modal">&times;</button>
             </div>
-            <div class="modal-body-custom">
+            <div class="modal-body-custom p-3 p-sm-4">
                 <p class="demo-note">Course demo: no account is created and no email is sent.</p>
-                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
-                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
-                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                <div class="modal-tabs mb-3" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active btn btn-light px-3 py-2 rounded-0" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn btn btn-light px-3 py-2 rounded-0" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
                 </div>
 
                 <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
@@ -205,33 +218,33 @@
                         <div class="mb-3">
                             <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
-                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-name" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
-                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-email" aria-live="polite" class="error-msg mt-1"></div>
                             <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
                             <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
-                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-password" aria-live="polite" class="error-msg mt-1"></div>
                             <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
                             <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
-                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
                             <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
-                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
@@ -246,7 +259,7 @@
                         <div class="mb-3">
                             <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
-                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                            <div id="err-sub-email" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
                         <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
                     </form>
@@ -256,20 +269,18 @@
     </div>
 
     <!-- Required Footer: Must contain all team members' names -->
-    <footer class="site-footer py-4 px-3 mt-lg-4">
-        <div class="container text-center">
-            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
-            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
-        </div>
-    </footer>
+    <footer class="site-footer px-3 px-sm-4 px-xl-5 py-3"><span>CodeQuiz · Team Spirit · SE 2508</span><span>Darkhan Saduakasov &amp; Kassymkhan</span></footer>
+
+    <div id="action-toast" class="action-toast px-3 py-2" role="status" aria-live="polite" hidden></div>
 
     <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
 
     <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
-    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/assignment5.js"></script>
+    <script src="js/assignment6.js"></script>
+    <script src="js/platform.js"></script>
 
 </body>
 

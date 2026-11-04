@@ -1,11 +1,12 @@
 {
-  "name": "team-spirit-codequiz-assignment-5",
-  "version": "1.1.0",
+  "name": "team-spirit-codequiz-assignment-6",
+  "version": "1.2.0",
   "private": true,
-  "description": "CodeQuiz: Assignment 5 extension with a jQuery study planner, library, gallery and sound",
   "scripts": {
-    "test": "node tests/assignment5-browser-tests.cjs",
-    "check": "node --check js/script.js && node --check js/assignment5.js"
+    "check": "node --check js/script.js && node --check js/assignment5.js && node --check js/assignment6.js && node --check js/jquery-fallback.js && node --check js/platform.js",
+    "test": "node tests/assignment6-browser-tests.cjs",
+    "test:regression": "node tests/regression-browser-tests.cjs",
+    "test:platform": "node tests/platform-browser-tests.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

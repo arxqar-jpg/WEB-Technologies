@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-04",
+  "passed": [
+    "Task 0: CDN script is in head; jQuery 4 and ready message initialize",
+    "Task 0: offline CDN fallback runs all five pages with the same local version",
+    "Task 1: live search filters titles/descriptions, ignores case and clears",
+    "Tasks 1-2: category and text filters combine without stale suggestions",
+    "Task 2: mouse and Arrow/Enter suggestions complete the search",
+    "Task 3: all literal matches are highlighted and repeated searches do not nest marks",
+    "Task 4: progress updates from zero through halfway to 100 and after resize",
+    "Task 5: visible counters count through intermediate values to actual totals",
+    "Task 5: counters honor reduced motion",
+    "Task 6: invalid forms stay editable; valid submit shows spinner and blocks repeats",
+    "Task 7: success notification appears then fades away",
+    "Tasks 6-7: registration and newsletter share loading, reset and confirmation",
+    "Task 8: real clipboard copy shows checkmark and tooltip then resets",
+    "Task 8: fallback copy works; denied copy never claims success",
+    "Task 9: offscreen images are not requested until visible",
+    "Task 9: all nine carousel slides load when shown; gallery selection is preserved",
+    "Regression: quiz scores, FAQ, background colors and menu keys still work",
+    "Mobile: search dropdown, planner/copy and loading controls fit at 360px",
+    "All five pages fit 320/360/390/576/768/992/1440px with no runtime errors"
+  ],
+  "errors": [],
+  "browser": "156.0.8078.74",
+  "cdnHttpStatus": 200,
+  "transports": [
+    "HTTP localhost",
+    "offline file URLs"
+  ],
+  "widths": [
+    320,
+    360,
+    390,
+    576,
+    768,
+    992,
+    1440
+  ]
+}

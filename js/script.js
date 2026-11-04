@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     initNewsletter();
     initFAQ();
     initContact();
-    initQuiz("java", ["class", "main()", ";"]);
-    initQuiz("python", ["def", "print()", ".py"]);
-    initQuiz("html", ["HyperText Markup Language", "<p>", "Styling"]);
+    initQuiz("java", ["5", "6", "Quiz round = new Quiz();"]);
+    initQuiz("python", ["4", "True", "6"]);
+    initQuiz("html", ["submit", "#selected", "One card per row"]);
 });
 function initClock() {
     var clock = document.getElementById("current-date-time");
@@ -26,17 +26,28 @@ function initClock() {
 }
 function initTheme() {
     var button = document.getElementById("btn-change-bg");
-    var colours = ["#edf4f8", "#e8f7f1", "#fff5e5", "#f0edfa", "#ffffff"];
+    var names = ["forest", "midnight", "cobalt"];
+    var labels = ["Forest", "Midnight", "Cobalt"];
+    var colours = ["#f5f5ef", "#111821", "#f3f5fb"];
     var index = 0;
     if (!button) return;
-
-    document.body.style.backgroundColor = colours[index];
-
-    button.onclick = function () {
-        index++;
-        if (index === colours.length) index = 0;
+    function applyTheme(name) {
+        index = names.indexOf(name);
+        if (index < 0) index = 0;
+        document.body.setAttribute("data-theme", names[index]);
         document.body.style.backgroundColor = colours[index];
-    };
+        document.getElementById("theme-name").textContent = labels[index];
+        button.setAttribute("aria-label", "Switch theme. Current theme: " + labels[index]);
+        try { localStorage.setItem("codequiz-theme", names[index]); } catch (error) {}
+    }
+    var saved = "forest";
+    try { saved = localStorage.getItem("codequiz-theme") || saved; } catch (error) {}
+    applyTheme(saved);
+    button.onclick = function () { applyTheme(names[(index + 1) % names.length]); };
+    var choices = document.querySelectorAll("[data-site-theme]");
+    for (var i = 0; i < choices.length; i++) {
+        choices[i].onclick = function () { applyTheme(this.getAttribute("data-site-theme")); };
+    }
 }
 function initModal() {
     var modal = document.getElementById("custom-modal-overlay");
@@ -97,6 +108,19 @@ function initModal() {
     for (var j = 0; j < tabs.length; j++) {
         tabs[j].onclick = function () {
             showTab(this.getAttribute("data-tab"));
+        };
+        tabs[j].onkeydown = function (event) {
+            var next;
+            if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+                next = this === tabs[0] ? 1 : 0;
+            } else if (event.key === "Home") {
+                next = 0;
+            } else if (event.key === "End") {
+                next = tabs.length - 1;
+            } else return;
+            event.preventDefault();
+            showTab(tabs[next].getAttribute("data-tab"));
+            tabs[next].focus();
         };
     }
 
@@ -186,7 +210,7 @@ function showField(input, message) {
     return true;
 }
 
-function finishForm(form, boxId, message) {
+function completeForm(form, boxId, message) {
     form.reset();
     var inputs = form.querySelectorAll("input, textarea");
     for (var i = 0; i < inputs.length; i++) {
@@ -466,3 +490,7 @@ function initQuiz(language, answers) {
         result.textContent = feedback + " You scored " + score + " out of " + answers.length + " (" + percentage + "%).";
     };
 }
+
+$(document).ready(function () {
+    console.log("jQuery is ready!");
+});

@@ -10,70 +10,84 @@
     <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/assignment5.css">
+    <link rel="stylesheet" href="css/assignment6.css">
+    <link rel="stylesheet" href="css/platform.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery-fallback.js"></script>
 </head>
 
-<body>
+<body data-theme="forest" class="catalog-page">
+    <div class="scroll-track"><div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div>
 
-    <!-- Task 5 & Task 4: Live Date/Time Bar and Theme Controls -->
-    <div class="top-bar-info py-2 px-3">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-            <time id="current-date-time" class="date-badge">
-                <span>🕒 Loading current date &amp; time...</span>
-            </time>
-            <div class="d-flex align-items-center gap-2">
-                <button type="button" id="btn-change-bg" class="btn btn-sm btn-outline-light py-1 px-2" title="Change background color">
-                    🎨 Change Theme
-                </button>
-                <button type="button" class="btn btn-sm btn-info py-1 px-3 text-dark fw-bold trigger-modal-btn" data-modal-tab="register">
-                    Sign Up
-                </button>
+<svg class="icon-definitions" aria-hidden="true"><defs>
+<symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 5v16M12 5C8 2 4 4 3 4v15c4-1 7 0 9 2 2-2 5-3 9-2V4c-4-1-7-1-9 1Z"/></symbol>
+<symbol id="icon-plan" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8 2v4m8-4v4M8 11h8m-8 4h5"/></symbol>
+<symbol id="icon-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-15a3 3 0 0 1 0 6m4 9v-2a6 6 0 0 0-3-5"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+</defs></svg>
+    <header id="main-header" class="platform-sidebar">
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar bg-dark p-0" aria-label="Main navigation">
+            <div class="sidebar-brand-row px-3 px-lg-4 py-3 py-lg-4">
+                <a class="navbar-brand m-0" href="index.html"><span class="brand-mark">cq</span><span class="brand-name">CodeQuiz</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             </div>
+            <div class="collapse navbar-collapse px-3 px-lg-4" id="mainNavigation">
+                <p class="nav-caption mt-4 mb-3 px-2">Navigation</p>
+                <ul class="navbar-nav w-100 gap-2"><li class="nav-item"><a class="nav-link px-3 py-2 active" aria-current="page" href="index.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-grid"></use></svg>Overview</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="quiz.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-book"></use></svg>Quizzes</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="study.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-plan"></use></svg>Study Lab</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="about.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-team"></use></svg>About us</a></li>
+<li class="nav-item"><a class="nav-link px-3 py-2" href="contact.html"><svg class="platform-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Contacts</a></li>
+
+                    <li class="nav-item mt-3"><button type="button" class="btn btn-sm newsletter-link trigger-modal-btn" data-modal-tab="subscribe"><svg class="platform-icon" aria-hidden="true"><use href="#icon-mail"></use></svg>Newsletter</button></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="sidebar-meta mt-auto mx-4 pt-3 pb-4"><strong>Team Spirit</strong><span>SE 2508 · Web Technologies</span></div>
+    </header>
+    <div class="platform-topbar px-0 px-lg-4 px-xl-5">
+        <p class="page-location m-0">Workspace <span class="mx-2">/</span> <strong>Overview</strong></p>
+        <div class="topbar-actions d-flex align-items-center gap-2 gap-sm-3">
+            <time id="current-date-time" class="date-badge">Loading current date and time…</time>
+            <div class="btn-group theme-control" role="group" aria-label="Color theme">
+                <button id="btn-change-bg" type="button" class="btn theme-cycle px-2 px-sm-3" title="Switch color theme"><span class="theme-dot" aria-hidden="true"></span><span id="theme-name">Forest</span></button>
+                <button type="button" class="btn theme-toggle dropdown-toggle dropdown-toggle-split px-2" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Choose color theme"></button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><button type="button" class="dropdown-item" data-site-theme="forest">Forest</button></li>
+                    <li><button type="button" class="dropdown-item" data-site-theme="midnight">Midnight</button></li>
+                    <li><button type="button" class="dropdown-item" data-site-theme="cobalt">Cobalt</button></li>
+                </ul>
+            </div>
+            <button type="button" class="btn signup-button px-2 px-sm-3 trigger-modal-btn" data-modal-tab="register">Sign up</button>
         </div>
     </div>
 
-    <header id="main-header">
-        <nav class="navbar navbar-expand-lg navbar-dark site-navbar" aria-label="Main navigation">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">CodeQuiz</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavigation">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="quiz.html">Quiz</a></li>
-                        <li class="nav-item"><a class="nav-link" href="study.html">Study Lab</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
-                        <li class="nav-item ms-lg-2">
-                            <button type="button" class="btn btn-sm btn-outline-info trigger-modal-btn" data-modal-tab="subscribe">
-                                📬 Newsletter
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+    <main class="container platform-main px-3 px-sm-4 px-xl-5 py-4">
+<section class="platform-intro d-flex justify-content-between align-items-center gap-3 mb-4">
+    <div><h1>Programming quizzes</h1><p class="text-secondary mt-2 mb-0">Choose a topic, answer three questions and review your result.</p></div>
+    <div class="catalog-totals d-flex gap-4" aria-label="Quiz totals"><div><strong class="number-counter" data-count="3">3</strong><span>topics</span></div><div><strong class="number-counter" data-count="9">9</strong><span>questions</span></div></div>
+</section>
+<div class="library-layout"><section id="practice-library" class="catalog-library" aria-labelledby="library-heading">
+            <div class="lab-section-heading mb-3">
+                <h2 id="library-heading">Available quizzes</h2>
+                <p id="topic-count" class="text-secondary mb-0" role="status"></p>
             </div>
-        </nav>
-    </header>
-
-    <main class="container py-4 py-lg-5">
-
-        <section class="welcome text-center py-4 px-2 mb-4">
-            <h1>Test Your Programming Knowledge</h1>
-            <p class="lead text-secondary">
-                CodeQuiz is a modern interactive website where students can test
-                their knowledge of popular programming languages.
-            </p>
-            <div class="d-flex justify-content-center gap-2 my-3">
-                <a class="btn btn-primary" href="quiz.html">Browse Quizzes</a>
-                <a class="btn btn-outline-primary" href="study.html">Build a Practice Plan</a>
-                <button type="button" class="btn btn-outline-secondary trigger-modal-btn" data-modal-tab="subscribe">Subscribe to Updates</button>
+            <div class="topic-search mb-3">
+                <label class="visually-hidden" for="topic-search">Search practice topics</label>
+                <input id="topic-search" type="search" class="form-control" placeholder="Search quizzes by topic…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="topic-suggestions" aria-expanded="false">
+                <ul id="topic-suggestions" class="list-group" role="listbox" aria-label="Search suggestions" hidden></ul>
             </div>
-            <img class="round-image img-fluid mt-2" src="images/assets/photo-1519389950473-47ba0277781c.jpg" alt="Developers collaborating at computers">
-        </section>
-
-        <section class="mb-5">
-            <h2>Choose a Quiz</h2>
+            <div class="topic-filters mb-3" role="group" aria-label="Filter practice topics">
+                <button type="button" class="topic-filter active btn btn-outline-primary px-2 px-sm-3 py-2" data-category="all" aria-pressed="true">All topics</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="java" aria-pressed="false">Java</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="python" aria-pressed="false">Python</button>
+                <button type="button" class="topic-filter btn btn-outline-primary px-2 px-sm-3 py-2" data-category="web" aria-pressed="false">HTML &amp; CSS</button>
+            </div>
+            <div id="practice-topics" class="row g-3"></div>
+        </section><aside class="howto-panel p-3 p-xl-4" aria-labelledby="howto-heading"><h2 id="howto-heading">How it works</h2><ol class="list-unstyled d-flex flex-column gap-4 mt-4 mb-0"><li><span>1</span><div><strong>Choose a topic</strong><p class="mb-0 mt-1">Start with what you know.</p></div></li><li><span>2</span><div><strong>Answer 3 questions</strong><p class="mb-0 mt-1">One answer per question.</p></div></li><li><span>3</span><div><strong>Review your result</strong><p class="mb-0 mt-1">See what to practise next.</p></div></li></ol><a href="study.html#practice-planner" class="howto-plan d-block mt-4 pt-3">Build a practice plan →</a></aside></div>
+<details class="platform-resources mt-4 pt-3"><summary>Resources &amp; FAQ</summary><div class="resource-content mt-4"><section class="mb-4">
+            <h2>Topic reference</h2>
             <div class="quiz-container">
                 <div class="quiz-card p-3">
                     <h3>Java Quiz</h3>
@@ -94,118 +108,7 @@
                 </div>
             </div>
         </section>
-
-        <section class="mb-5">
-            <h2>How It Works</h2>
-            <ol>
-                <li>Choose your preferred programming language.</li>
-                <li>Open the interactive quiz.</li>
-                <li>Answer all questions and submit to see your instant score!</li>
-            </ol>
-
-            <h3>Available Topics</h3>
-            <ul>
-                <li>Java Foundations</li>
-                <li>Python Essentials</li>
-                <li>HTML5 and CSS3 Web Development</li>
-            </ul>
-        </section>
-
-        <section class="mb-5">
-            <h2>Quiz Information</h2>
-            <table class="table table-bordered table-hover align-middle mb-0">
-                <thead>
-                    <tr>
-                        <th>Language</th>
-                        <th>Questions</th>
-                        <th>Difficulty</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Java</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
-                    <tr>
-                        <td>Python</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
-                    <tr>
-                        <td>HTML &amp; CSS</td>
-                        <td>3</td>
-                        <td>Easy</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- TASK 2: Accordion for FAQs or Content Sections -->
-        <section class="mb-5" aria-labelledby="faq-heading">
-            <h2 id="faq-heading" class="mb-3">Frequently Asked Questions (FAQ)</h2>
-            <div class="custom-accordion">
-                <div class="custom-accordion-item">
-                    <button type="button" class="custom-accordion-header" id="faq-question-1" aria-controls="faq-answer-1" aria-expanded="false">
-                        <span>What is CodeQuiz and who is it designed for?</span>
-                        <span class="accordion-icon">&#9660;</span>
-                    </button>
-                    <div class="custom-accordion-content" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true" inert>
-                        <p>CodeQuiz is an interactive web platform designed for computer science students and beginner developers who want to test and reinforce their knowledge in core programming languages like Java, Python, and Web Technologies.</p>
-                    </div>
-                </div>
-
-                <div class="custom-accordion-item">
-                    <button type="button" class="custom-accordion-header" id="faq-question-2" aria-controls="faq-answer-2" aria-expanded="false">
-                        <span>Are the quizzes completely free to take?</span>
-                        <span class="accordion-icon">&#9660;</span>
-                    </button>
-                    <div class="custom-accordion-content" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true" inert>
-                        <p>Yes, all quizzes on CodeQuiz are 100% free and accessible without any subscription fees. You can take them anytime directly in your browser.</p>
-                    </div>
-                </div>
-
-                <div class="custom-accordion-item">
-                    <button type="button" class="custom-accordion-header" id="faq-question-3" aria-controls="faq-answer-3" aria-expanded="false">
-                        <span>Can I retake a quiz if I want to improve my score?</span>
-                        <span class="accordion-icon">&#9660;</span>
-                    </button>
-                    <div class="custom-accordion-content" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true" inert>
-                        <p>Absolutely! You can retake any quiz as many times as you like. The interactive system recalculates your score and provides instant feedback on correct and incorrect answers.</p>
-                    </div>
-                </div>
-
-                <div class="custom-accordion-item">
-                    <button type="button" class="custom-accordion-header" id="faq-question-4" aria-controls="faq-answer-4" aria-expanded="false">
-                        <span>Which programming languages will be added next?</span>
-                        <span class="accordion-icon">&#9660;</span>
-                    </button>
-                    <div class="custom-accordion-content" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" aria-hidden="true" inert>
-                        <p>We are actively working on adding C++, JavaScript (ES6+), SQL, and TypeScript in the upcoming release. Subscribe to our newsletter to get notified!</p>
-                    </div>
-                </div>
-
-                <div class="custom-accordion-item">
-                    <button type="button" class="custom-accordion-header" id="faq-question-5" aria-controls="faq-answer-5" aria-expanded="false">
-                        <span>How do I create an account or subscribe to updates?</span>
-                        <span class="accordion-icon">&#9660;</span>
-                    </button>
-                    <div class="custom-accordion-content" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" aria-hidden="true" inert>
-                        <p>Simply click the "Sign Up" or "Newsletter" button in the top navigation bar. A pop-up form will appear where you can enter your details.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="profile mb-5 p-3 p-sm-4">
-            <h2>About the Team Member</h2>
-            <p>
-                My name is Saduakasov Darkhan. I am a student of Astana IT University
-                interested in programming and web development.
-            </p>
-        </section>
-
-        <section class="mb-5" aria-labelledby="grid-heading">
+<section class="mb-5" aria-labelledby="grid-heading">
             <h2 id="grid-heading">Explore CodeQuiz</h2>
             <div class="row g-3 mt-lg-2">
                 <div class="col-12 col-lg-6">
@@ -224,13 +127,12 @@
                 </div>
             </div>
         </section>
-
-        <section class="mb-5" aria-labelledby="topics-heading">
+<section class="mb-5" aria-labelledby="topics-heading">
             <h2 id="topics-heading">Featured Topics</h2>
-            <div class="row g-3 mt-lg-2">
+            <div class="card-group row g-3 mt-lg-2" aria-label="Featured topics">
                 <div class="col-12 col-sm-6 col-lg-4">
                     <article class="card h-100">
-                        <img src="images/assets/photo-1555066931-4365d14bab8c.jpg" class="card-img-top topic-image" alt="Java code on a computer screen">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" class="lazy-image card-img-top topic-image" alt="Java code on a computer screen">
                         <div class="card-body">
                             <h3 class="card-title h5">Java foundations</h3>
                             <p class="card-text">Review classes, methods, and the building blocks of Java.</p>
@@ -240,7 +142,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <article class="card h-100">
-                        <img src="images/assets/photo-1515879218367-8466d910aaa4.jpg" class="card-img-top topic-image" alt="Python code displayed on a screen">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1515879218367-8466d910aaa4.jpg" class="lazy-image card-img-top topic-image" alt="Python code displayed on a screen">
                         <div class="card-body">
                             <h3 class="card-title h5">Python essentials</h3>
                             <p class="card-text">Check your knowledge of functions, syntax, and Python basics.</p>
@@ -250,7 +152,7 @@
                 </div>
                 <div class="col-12 col-sm-6 col-lg-4">
                     <article class="card h-100">
-                        <img src="images/assets/photo-1498050108023-c5249f4df085.jpg" class="card-img-top topic-image" alt="Web development workspace with code on screen">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" class="lazy-image card-img-top topic-image" alt="Web development workspace with code on screen">
                         <div class="card-body">
                             <h3 class="card-title h5">HTML &amp; CSS</h3>
                             <p class="card-text">Explore the structure and styling behind modern web pages.</p>
@@ -260,63 +162,121 @@
                 </div>
             </div>
         </section>
-
-        <section class="mb-5" aria-labelledby="gallery-heading">
+<section class="mb-5" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading">Programming in Pictures</h2>
             <div id="codeQuizCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="Programming image carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Image 1"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="1" aria-label="Image 2"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="2" aria-label="Image 3"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="3" aria-label="Image 4"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="4" aria-label="Image 5"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="5" aria-label="Image 6"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="6" aria-label="Image 7"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="7" aria-label="Image 8"></button>
+                    <button type="button" data-bs-target="#codeQuizCarousel" data-bs-slide-to="8" aria-label="Image 9"></button>
                 </div>
                 <div class="carousel-inner rounded-2">
                     <div class="carousel-item active">
-                        <div class="row g-2">
-                            <div class="col-12 col-md-4"><img src="images/assets/photo-1519389950473-47ba0277781c.jpg" class="d-block w-100 gallery-image" alt="Developers working together"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1498050108023-c5249f4df085.jpg" class="d-block w-100 gallery-image" alt="Laptop with a code editor"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1516321318423-f06f85e504b3.jpg" class="d-block w-100 gallery-image" alt="Team collaborating around a laptop"></div>
-                        </div>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1519389950473-47ba0277781c.jpg" class="lazy-image d-block w-100 gallery-image" alt="Developers working together">
                     </div>
                     <div class="carousel-item">
-                        <div class="row g-2">
-                            <div class="col-12 col-md-4"><img src="images/assets/photo-1518770660439-4636190af475.jpg" class="d-block w-100 gallery-image" alt="Computer hardware and technology"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1522071820081-009f0129c71c.jpg" class="d-block w-100 gallery-image" alt="People working as a team"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1515879218367-8466d910aaa4.jpg" class="d-block w-100 gallery-image" alt="Programming code on a monitor"></div>
-                        </div>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1498050108023-c5249f4df085.jpg" class="lazy-image d-block w-100 gallery-image" alt="Laptop with a code editor">
                     </div>
                     <div class="carousel-item">
-                        <div class="row g-2">
-                            <div class="col-12 col-md-4"><img src="images/assets/photo-1555066931-4365d14bab8c.jpg" class="d-block w-100 gallery-image" alt="Code displayed on a laptop"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1556761175-b413da4baf72.jpg" class="d-block w-100 gallery-image" alt="Team planning a software project"></div>
-                            <div class="col-12 col-md-4 d-none d-md-block"><img src="images/assets/photo-1521737711867-e3b97375f902.jpg" class="d-block w-100 gallery-image" alt="A team sharing ideas around a table"></div>
-                        </div>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1516321318423-f06f85e504b3.jpg" class="lazy-image d-block w-100 gallery-image" alt="Team collaborating around a laptop">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1518770660439-4636190af475.jpg" class="lazy-image d-block w-100 gallery-image" alt="Computer hardware and technology">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1522071820081-009f0129c71c.jpg" class="lazy-image d-block w-100 gallery-image" alt="People working as a team">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1515879218367-8466d910aaa4.jpg" class="lazy-image d-block w-100 gallery-image" alt="Programming code on a monitor">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1555066931-4365d14bab8c.jpg" class="lazy-image d-block w-100 gallery-image" alt="Code displayed on a laptop">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1556761175-b413da4baf72.jpg" class="lazy-image d-block w-100 gallery-image" alt="Team planning a software project">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/assets/photo-1521737711867-e3b97375f902.jpg" class="lazy-image d-block w-100 gallery-image" alt="A team sharing ideas around a table">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#codeQuizCarousel" data-bs-slide="prev" aria-label="Previous images"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
                 <button class="carousel-control-next" type="button" data-bs-target="#codeQuizCarousel" data-bs-slide="next" aria-label="Next images"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
             </div>
         </section>
+<section class="mb-5" aria-labelledby="faq-heading">
+            <h2 id="faq-heading" class="mb-3">Frequently Asked Questions (FAQ)</h2>
+            <div class="custom-accordion">
+                <div class="custom-accordion-item">
+                    <button type="button" class="custom-accordion-header btn btn-light px-3 py-3 rounded-0 gap-3" id="faq-question-1" aria-controls="faq-answer-1" aria-expanded="false">
+                        <span>What is CodeQuiz and who is it designed for?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="custom-accordion-content px-3" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true" inert>
+                        <p class="mb-0 pb-3">CodeQuiz is an interactive web platform designed for computer science students and beginner developers who want to test and reinforce their knowledge in core programming languages like Java, Python, and Web Technologies.</p>
+                    </div>
+                </div>
 
-        <div class="btn-group mb-4" role="group" aria-label="Quick quiz links">
-            <a class="btn btn-outline-primary" href="quiz.html#java">Java</a>
-            <a class="btn btn-outline-primary" href="quiz.html#python">Python</a>
-            <a class="btn btn-outline-primary" href="quiz.html#htmlcss">HTML &amp; CSS</a>
-        </div>
+                <div class="custom-accordion-item">
+                    <button type="button" class="custom-accordion-header btn btn-light px-3 py-3 rounded-0 gap-3" id="faq-question-2" aria-controls="faq-answer-2" aria-expanded="false">
+                        <span>Are the quizzes completely free to take?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="custom-accordion-content px-3" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true" inert>
+                        <p class="mb-0 pb-3">Yes, all quizzes on CodeQuiz are 100% free and accessible without any subscription fees. You can take them anytime directly in your browser.</p>
+                    </div>
+                </div>
 
-    </main>
+                <div class="custom-accordion-item">
+                    <button type="button" class="custom-accordion-header btn btn-light px-3 py-3 rounded-0 gap-3" id="faq-question-3" aria-controls="faq-answer-3" aria-expanded="false">
+                        <span>Can I retake a quiz if I want to improve my score?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="custom-accordion-content px-3" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true" inert>
+                        <p class="mb-0 pb-3">Absolutely! You can retake any quiz as many times as you like. The interactive system recalculates your score and provides instant feedback on correct and incorrect answers.</p>
+                    </div>
+                </div>
+
+                <div class="custom-accordion-item">
+                    <button type="button" class="custom-accordion-header btn btn-light px-3 py-3 rounded-0 gap-3" id="faq-question-4" aria-controls="faq-answer-4" aria-expanded="false">
+                        <span>Which programming languages will be added next?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="custom-accordion-content px-3" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" aria-hidden="true" inert>
+                        <p class="mb-0 pb-3">We are actively working on adding C++, JavaScript (ES6+), SQL, and TypeScript in the upcoming release. Subscribe to our newsletter to get notified!</p>
+                    </div>
+                </div>
+
+                <div class="custom-accordion-item">
+                    <button type="button" class="custom-accordion-header btn btn-light px-3 py-3 rounded-0 gap-3" id="faq-question-5" aria-controls="faq-answer-5" aria-expanded="false">
+                        <span>How do I create an account or subscribe to updates?</span>
+                        <span class="accordion-icon">&#9660;</span>
+                    </button>
+                    <div class="custom-accordion-content px-3" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" aria-hidden="true" inert>
+                        <p class="mb-0 pb-3">Simply click the "Sign Up" or "Newsletter" button in the top navigation bar. A pop-up form will appear where you can enter your details.</p>
+                    </div>
+                </div>
+            </div>
+        </section></div></details>
+</main>
 
     <!-- TASK 3: Popup Subscription or Registration Form Modal -->
-    <div id="custom-modal-overlay" class="custom-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
+    <div id="custom-modal-overlay" class="custom-modal-overlay p-2 p-sm-3" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1" inert>
         <div class="custom-modal-card">
-            <div class="modal-header-custom">
+            <div class="modal-header-custom px-3 px-sm-4 py-3">
                 <h2 id="modal-title" class="m-0 fs-5 fw-bold text-white">Join CodeQuiz</h2>
-                <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+                <button type="button" id="modal-close-btn" class="modal-close-btn btn btn-dark btn-sm px-2 py-1" aria-label="Close modal">&times;</button>
             </div>
-            <div class="modal-body-custom">
+            <div class="modal-body-custom p-3 p-sm-4">
                 <p class="demo-note">Course demo: no account is created and no email is sent.</p>
-                <div class="modal-tabs" role="tablist" aria-label="Join CodeQuiz options">
-                    <button type="button" class="modal-tab-btn active" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
-                    <button type="button" class="modal-tab-btn" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
+                <div class="modal-tabs mb-3" role="tablist" aria-label="Join CodeQuiz options">
+                    <button type="button" class="modal-tab-btn active btn btn-light px-3 py-2 rounded-0" data-tab="register" id="modal-tab-register" role="tab" aria-controls="tab-register" aria-selected="true" tabindex="0">Registration</button>
+                    <button type="button" class="modal-tab-btn btn btn-light px-3 py-2 rounded-0" data-tab="subscribe" id="modal-tab-subscribe" role="tab" aria-controls="tab-subscribe" aria-selected="false" tabindex="-1">Newsletter</button>
                 </div>
 
                 <!-- Tab 1: Registration Form (Task 1: Form Validation) -->
@@ -326,33 +286,33 @@
                         <div class="mb-3">
                             <label for="reg-name" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="reg-name" required aria-describedby="err-reg-name" minlength="2" maxlength="100" placeholder="e.g. Darkhan Saduakasov" autocomplete="name">
-                            <div id="err-reg-name" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-name" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-email" class="form-label fw-bold">Email Address <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="reg-email" required aria-describedby="err-reg-email" maxlength="254" placeholder="e.g. darkhan@astanait.edu.kz" autocomplete="email">
-                            <div id="err-reg-email" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-email" aria-live="polite" class="error-msg mt-1"></div>
                             <small class="text-muted d-block mt-1">Use your own email. Example and known disposable addresses are rejected.</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-password" class="form-label fw-bold">Password <span class="text-danger">*</span></label>
                             <input type="password" class="form-control" id="reg-password" required aria-describedby="err-reg-password" minlength="8" placeholder="At least 8 chars (letters and numbers)" autocomplete="new-password">
-                            <div id="err-reg-password" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-password" aria-live="polite" class="error-msg mt-1"></div>
                             <small class="text-muted d-block mt-1">Must be at least 8 characters, contain letters and numbers, and <strong>no spaces</strong>.</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="reg-confirm-password" class="form-label fw-bold">Confirm Password <span class="text-danger">*</span></label>
                             <input type="password" class="form-control" id="reg-confirm-password" required aria-describedby="err-reg-confirm-password" minlength="8" placeholder="Repeat your password" autocomplete="new-password">
-                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-confirm-password" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="reg-terms" required aria-describedby="err-reg-terms">
                             <label class="form-check-label" for="reg-terms">I accept the Terms &amp; Conditions and Privacy Policy <span class="text-danger">*</span></label>
-                            <div id="err-reg-terms" aria-live="polite" class="error-msg"></div>
+                            <div id="err-reg-terms" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Create Account</button>
@@ -367,7 +327,7 @@
                         <div class="mb-3">
                             <label for="sub-email" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" id="sub-email" required aria-describedby="err-sub-email" maxlength="254" autocomplete="email" placeholder="name@gmail.com">
-                            <div id="err-sub-email" aria-live="polite" class="error-msg"></div>
+                            <div id="err-sub-email" aria-live="polite" class="error-msg mt-1"></div>
                         </div>
                         <button type="submit" class="btn btn-info w-100 text-dark fw-bold py-2">Subscribe to Newsletter</button>
                     </form>
@@ -377,20 +337,18 @@
     </div>
 
     <!-- Required Footer: Must contain all team members' names -->
-    <footer class="site-footer py-4 px-3 mt-lg-4">
-        <div class="container text-center">
-            <p class="mb-1"><strong>Team Spirit &bull; CodeQuiz</strong> &bull; Assignments #4 &amp; #5</p>
-            <p class="m-0 text-white-50">Developers: <strong>Kassymkhan</strong> &amp; <strong>Darkhan Saduakasov</strong></p>
-        </div>
-    </footer>
+    <footer class="site-footer px-3 px-sm-4 px-xl-5 py-3"><span>CodeQuiz · Team Spirit · SE 2508</span><span>Darkhan Saduakasov &amp; Kassymkhan</span></footer>
+
+    <div id="action-toast" class="action-toast px-3 py-2" role="status" aria-live="polite" hidden></div>
 
     <noscript><p class="container alert alert-warning">Enable JavaScript to use forms, quizzes, the FAQ, popup, themes and clock.</p></noscript>
 
     <!-- Bootstrap 5 & Custom JavaScript (bundled locally for offline use) -->
-    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/assignment5.js"></script>
+    <script src="js/assignment6.js"></script>
+    <script src="js/platform.js"></script>
 
 </body>
 

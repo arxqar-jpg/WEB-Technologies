@@ -22,3 +22,10 @@ The four original PNG files (Home.png, Quiz.png, About.png, contacts.png) remain
 - jQuery 3.7.1: https://code.jquery.com/jquery-3.7.1.min.js; MIT license in vendor/jquery/LICENSE.txt. This is the version used by the supplied jQuery slides.
 - audio/notification.wav: original synthetic 0.42-second PCM chime created for this project, with no third-party recording.
 - New report screenshots: report/assignment-5/screenshots/.
+
+
+## Forest platform fonts
+
+- Sora variable: https://github.com/google/fonts/tree/main/ofl/sora
+- Figtree variable: https://github.com/google/fonts/tree/main/ofl/figtree
+- Both fonts are bundled locally with their OFL license texts in vendor/fonts/.
