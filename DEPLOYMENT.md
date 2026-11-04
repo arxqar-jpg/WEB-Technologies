@@ -1,24 +1,14 @@
-# Publish Assignment 5
+# Assignment 6 publication
 
-Team Spirit / Darkhan Saduakasov and Kassymkhan / SE 2508.
+Team Spirit / Darkhan Saduakasov; Kassymkhan / SE 2508
 
-The archive is ready for static hosting. No remote commit, push or online deployment was made in this task. The report's public URL must be filled only after the updated site is actually published and verified.
+Website: https://arxqar-jpg.github.io/WEB-Technologies/index.html
+Repository: https://github.com/arxqar-jpg/WEB-Technologies
+Implementation commit: https://github.com/arxqar-jpg/WEB-Technologies/commit/b8f810f64451221357375df49f1472b037fff91e
+Successful Pages build: https://github.com/arxqar-jpg/WEB-Technologies/actions/runs/41895949494
 
-1. Open the existing team repository (the original README identifies https://github.com/arxqar-jpg/WEB-Technologies).
-2. Copy the CONTENTS of this CodeQuiz folder into its root, keeping existing Git history. Ensure index.html, study.html, js/, css/, vendor/, images/ and audio/ are all at the same level. Avoid another nested CodeQuiz folder.
-3. Review the changes with git status/diff, then commit and push them to the team's branch.
-4. In GitHub repository Settings > Pages, select the correct branch and root folder. Alternatively upload the complete folder through Netlify's manual site upload; netlify.toml publishes the root without a build.
-5. Use the real URL provided by hosting. Open all five pages and check the planner, Next/Back values, reset, topic filters, image src changes, arrow-key menu navigation, sound/mute/rapid clicks, registration, FAQ, popup and quizzes. Verify on a phone and a second browser.
-6. Enter the verified URL in the fillable field on report/assignment-5/Assignment-5-Report.pdf and in REPORT.md. Save the PDF and include the updated report in the final submitted ZIP.
-7. Each member submits the report and project ZIP, observes the LMS deadline and prepares for the practice defense.
+The implementation was committed and pushed to main. GitHub Pages published it successfully. On 5 November 2026 (Asia/Qyzylorda), six live groups passed: all five pages, fonts and jQuery; search; quiz scoring; planner/clipboard; form feedback; resources and mobile navigation. Twelve public source/font files matched the committed implementation, with text line endings normalized. See report/assignment-6/live-verification.json.
 
-Example commands, used only after copying into the existing clone and reviewing:
+The PDF includes the live site, repository and implementation commit links. Submit the PDF and complete project ZIP to LMS. Each member must submit before the deadline and prepare for the practice defense. LMS submission is performed by the student.
 
-```sh
-git status
-git add .
-git commit -m "Add Assignment 5 CodeQuiz Study Lab"
-git push origin main
-```
-
-No server or paid service is required for the selected multi-step-form option. The forms demonstrate local validation; real accounts and mailbox verification require a backend.
+No build is required. Keep all HTML, css/, js/, vendor/, images/ and audio/ together when hosting or extracting the ZIP. Forms demonstrate frontend validation and feedback.

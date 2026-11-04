@@ -39,14 +39,16 @@ npm run test:regression
 
 Tests default to installed Google Chrome. CODEQUIZ_PLAYWRIGHT_PATH can identify an existing Playwright package directory. Tests create evidence only under report/assignment-6.
 
-## Push and publish
+## Published project
 
-1. Copy the CONTENTS of CodeQuiz into the root of the team's existing WEB-Technologies Git clone, preserving its .git folder/history.
-2. Review the changes, commit and push. GitHub Pages should rebuild from its configured branch/root.
-3. Verify https://arxqar-jpg.github.io/WEB-Technologies/index.html and study.html and the required interactions.
-4. After publishing, verify the public URL, then submit the report and project ZIP. Every member must submit and defend the assignment before the LMS deadline.
+- Website: https://arxqar-jpg.github.io/WEB-Technologies/index.html
+- Repository: https://github.com/arxqar-jpg/WEB-Technologies
+- Implementation commit: https://github.com/arxqar-jpg/WEB-Technologies/commit/b8f810f64451221357375df49f1472b037fff91e
+- GitHub Pages build: https://github.com/arxqar-jpg/WEB-Technologies/actions/runs/41895949494
 
-This package is prepared locally. The user will push and redeploy it.
+Published and verified on 5 November 2026 (Asia/Qyzylorda). Six public-site feature groups passed without JavaScript page errors; 12 public HTML/CSS/JavaScript/font files matched the committed implementation. Full evidence: report/assignment-6/live-verification.json.
+
+Submit the report PDF and complete project ZIP to LMS. Every member must submit before the deadline and defend the assignment at practice.
 
 ## Forest platform design
 

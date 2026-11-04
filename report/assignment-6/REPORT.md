@@ -5,7 +5,9 @@ Members: Darkhan Saduakasov; Kassymkhan
 Group: SE 2508
 Website: https://arxqar-jpg.github.io/WEB-Technologies/index.html
 
-The revised build is prepared locally. The team will push and redeploy it.
+Published and verified on 5 November 2026 (Asia/Qyzylorda).
+Repository: https://github.com/arxqar-jpg/WEB-Technologies
+Implementation commit: https://github.com/arxqar-jpg/WEB-Technologies/commit/b8f810f64451221357375df49f1472b037fff91e
 
 ## Task 0 / jQuery setup
 1. Add the required jQuery 4.0.0 CDN script in the head of all five HTML pages. Keep a local copy of the same version as an offline fallback.
@@ -69,4 +71,8 @@ The revised build is prepared locally. The team will push and redeploy it.
 51 groups passed: 19 Assignment 6, 25 regression and 7 platform groups; no JavaScript page errors.
 
 ## Deployment
-The team will push/redeploy this local revision and update publication status before submitting.
+Published and verified on 5 November 2026 (Asia/Qyzylorda). Six live groups passed; 12 public source/font files matched the committed project. See live-verification.json.
+Repository: https://github.com/arxqar-jpg/WEB-Technologies
+Implementation commit: https://github.com/arxqar-jpg/WEB-Technologies/commit/b8f810f64451221357375df49f1472b037fff91e
+Pages build: https://github.com/arxqar-jpg/WEB-Technologies/actions/runs/41895949494
+LMS upload and defense remain the responsibility of each team member.

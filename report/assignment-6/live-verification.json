@@ -1,0 +1,30 @@
+{
+  "verifiedAt": "2026-11-04T19:22:16.953Z",
+  "site": "https://arxqar-jpg.github.io/WEB-Technologies/index.html",
+  "repository": "https://github.com/arxqar-jpg/WEB-Technologies",
+  "codeCommit": "b8f810f64451221357375df49f1472b037fff91e",
+  "passed": [
+    "Public deployment serves all five Forest pages with jQuery 4 and the local fonts",
+    "Public search, suggestions and literal highlighting work",
+    "Public quiz topic tabs and the new correct-answer key produce 100 percent",
+    "Public planner, copy/checkmark/tooltip and clipboard data work",
+    "Public form spinner restores the button and shows a notification",
+    "Public resources, lazy-loaded carousel and mobile layout remain usable"
+  ],
+  "errors": [],
+  "matchingPublicFiles": [
+    "index.html",
+    "quiz.html",
+    "study.html",
+    "about.html",
+    "contact.html",
+    "css/platform.css",
+    "js/script.js",
+    "js/assignment5.js",
+    "js/assignment6.js",
+    "js/platform.js",
+    "vendor/fonts/Sora-Variable.ttf",
+    "vendor/fonts/Figtree-Variable.ttf"
+  ],
+  "browser": "157.0.8103.38"
+}
